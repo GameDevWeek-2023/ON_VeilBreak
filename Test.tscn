@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://clmq3m7ex0y7w"]
+
+[ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="1_2k2af"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lisdw"]
+
+[node name="Test" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233364, -0.0254869, 8.04874)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.33119, 0.943564, 0, -0.943564, 0.33119, 0, 5.75677, 4.17729)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15256e-06, -0.00377035, 0.000985622)
+mesh = SubResource("CapsuleMesh_lisdw")
+skeleton = NodePath("../Camera3D")
+
+[node name="thruster_exhaust" parent="MeshInstance3D" instance=ExtResource("1_2k2af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
