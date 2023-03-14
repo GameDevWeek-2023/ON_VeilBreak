@@ -40,3 +40,7 @@ lifetime = 2.0
 visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
 process_material = SubResource("ParticleProcessMaterial_1xcd5")
 draw_pass_1 = SubResource("BoxMesh_n1yco")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00993943, -0.759187, -0.00661469)
+light_color = Color(0, 1, 1, 1)
