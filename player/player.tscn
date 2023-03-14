@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5f8vlhw2s536"]
+[gd_scene load_steps=7 format=3 uid="uid://b5f8vlhw2s536"]
 
+[ext_resource type="PackedScene" uid="uid://copp5gxexhi85" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
 [ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="2_buvre"]
 [ext_resource type="PackedScene" uid="uid://2o2qqoeya0t7" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
@@ -9,6 +10,9 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghyiv"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="Weapon" parent="." instance=ExtResource("1_d0ojn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210164, 0.00938052, 0.00014849)
