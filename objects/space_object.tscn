@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtq15flv2kf7n"]
+
+[ext_resource type="Script" path="res://objects/space_object.gd" id="1_blcse"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oo6mn"]
+
+[node name="space_object" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_oo6mn")
+script = ExtResource("1_blcse")
