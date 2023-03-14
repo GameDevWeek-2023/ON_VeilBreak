@@ -31,16 +31,17 @@ func _physics_process(delta : float):
 	if move_direction != Vector3.ZERO:
 		move_direction = move_direction.normalized();
 		
-#	print(move_direction)
+	var roll_direction = Input.get_action_strength("roll_left") - Input.get_action_strength("roll_right");
+	
 	print(parent.transform.basis)
 	parent.translate(move_direction * acceleration);
 	parent.rotate(parent.transform.basis.x.normalized(), _pitch_direction * delta);
 	parent.rotate(parent.transform.basis.y.normalized(), _yaw_direction * delta);
+	parent.rotate(parent.transform.basis.z.normalized(), roll_direction * 5 * delta);
 	
 	self._pitch_direction = 0
 	self._yaw_direction = 0
 	
-#	var roll_direction = Input.get_action_strength("roll_left") - Input.get_action_strength("roll_right");
 #	parent.apply_torque(Vector3.RIGHT * roll_direction * 20 * delta);
 #	parent.apply_torque(Vector3.FORWARD * _pitch_direction * delta);
 #	parent.apply_torque(Vector3.UP * _yaw_direction   * delta);
