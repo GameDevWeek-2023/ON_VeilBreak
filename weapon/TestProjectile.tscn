@@ -3,5 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://dn00vlor687ie" path="res://weapon/Projectile.tscn" id="1_0hx57"]
 
 [node name="Projectile" instance=ExtResource("1_0hx57")]
-speed = 10.0
+speed = 100.0
 damage = 3

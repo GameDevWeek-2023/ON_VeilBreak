@@ -5,7 +5,7 @@ extends Node3D
 
 # Parent Node where projectiles are put in
 # Might refactor later
-@export var projectile_manager : Node;
+@export var player : Node;
 
 @export var cooldown : float = 1.0;
 
@@ -27,7 +27,7 @@ func shoot():
 		var proj = projectile.instantiate();
 		proj.position = muzzle.global_position;
 		proj.rotation = muzzle.global_rotation;
-		projectile_manager.add_child(proj);
+		player.get_parent().add_child(proj);
 		print("Shoot");
 		self.timer = self.cooldown;
 	
