@@ -1,17 +1,16 @@
 extends Node3D
 
-@onready var parent : CharacterBody3D = get_parent();
+@onready var parent : RigidBody3D = get_parent();
 @onready var mesh = get_parent().get_node("pivot")
 
 @export var mouse_sensitivity := 2.0
 @export var acceleration = 5;
 
-#@onready var camara : Node3D = get_parent().get_node("player_camara");
-
 var target_velocity = Vector3.ZERO
 
 var _yaw_direction : float = 0.0;
 var _pitch_direction : float = 0.0;
+
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -25,40 +24,24 @@ func _physics_process(delta : float):
 	
 	var sideway = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"));
 	var forward = (Input.get_action_strength("move_back") - Input.get_action_strength("move_forward"));
-#	var move_direction = delta_x * forward + delat_y * right
-	var move_direction = Vector3(sideway, 0, forward);
+	var up = (Input.get_action_strength("move_up") - Input.get_action_strength("move_down"));
+	var move_direction_a = parent.transform.basis.x.normalized() * sideway;
+	var move_direction_b = parent.transform.basis.y.normalized() * up;
+	var move_direction_c = parent.transform.basis.z.normalized() * forward;
+	var move_direction = move_direction_a + move_direction_b + move_direction_c; 
 	
 	if move_direction != Vector3.ZERO:
 		move_direction = move_direction.normalized();
 		
 	var roll_direction = Input.get_action_strength("roll_left") - Input.get_action_strength("roll_right");
-	
-	print(parent.transform.basis)
-	parent.translate(move_direction * acceleration);
 	parent.rotate(parent.transform.basis.x.normalized(), _pitch_direction * delta);
 	parent.rotate(parent.transform.basis.y.normalized(), _yaw_direction * delta);
 	parent.rotate(parent.transform.basis.z.normalized(), roll_direction * 5 * delta);
 	
+#	parent.angular_velocity = Vector3.ZERO
+	parent.move_and_collide(move_direction * acceleration)
+	
 	self._pitch_direction = 0
 	self._yaw_direction = 0
 	
-#	parent.apply_torque(Vector3.RIGHT * roll_direction * 20 * delta);
-#	parent.apply_torque(Vector3.FORWARD * _pitch_direction * delta);
-#	parent.apply_torque(Vector3.UP * _yaw_direction   * delta);
-
-	parent.move_and_slide()
 #
-#	target_velocity.x += move_direction.x * acceleration;
-#	target_velocity.z += move_direction.z * acceleration;
-	
-#	parent.velocity = target_velocity;
-
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-#	camara.position = parent.position

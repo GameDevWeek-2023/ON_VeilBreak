@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var parent : CharacterBody3D = get_parent();
+@onready var parent : RigidBody3D = get_parent();
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
