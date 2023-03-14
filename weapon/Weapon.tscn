@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://copp5gxexhi85"]
+
+[ext_resource type="Script" path="res://weapon/Weapon.gd" id="1_vkg36"]
+[ext_resource type="PackedScene" uid="uid://dn00vlor687ie" path="res://weapon/Projectile.tscn" id="2_l8ghk"]
+
+[sub_resource type="Curve" id="Curve_mv5tv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0451923, 1), 0.0, 0.0, 0, 0, Vector2(0.109615, 0.601227), -5.2203, -5.2203, 0, 0, Vector2(0.284615, 0), 8.34355, 8.34355, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bpi3b"]
+top_radius = 0.1
+bottom_radius = 0.2
+
+[node name="Weapon" type="Node3D"]
+script = ExtResource("1_vkg36")
+projectile = ExtResource("2_l8ghk")
+recoil_rotate = 0.2
+recoil_curve = SubResource("Curve_mv5tv")
+
+[node name="RecoilPivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RecoilPivot"]
+transform = Transform3D(1, 0.0002706, -0.000960962, 0.000961295, -0.00121265, 0.999999, 0.000269417, -0.999999, -0.00121291, 0.0012424, 0.00208259, -0.998142)
+mesh = SubResource("CylinderMesh_bpi3b")
+skeleton = NodePath("../..")
+
+[node name="Muzzle" type="Node3D" parent="RecoilPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
