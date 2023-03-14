@@ -32,10 +32,10 @@ func _physics_process(delta : float):
 		move_direction = move_direction.normalized();
 		
 #	print(move_direction)
-	print(_pitch_direction, _yaw_direction)
+	print(parent.transform.basis)
 	parent.translate(move_direction * acceleration);
-	parent.rotate(parent.transform.basis.x, _pitch_direction * delta);
-	parent.rotate(parent.transform.basis.y, _yaw_direction * delta);
+	parent.rotate(parent.transform.basis.x.normalized(), _pitch_direction * delta);
+	parent.rotate(parent.transform.basis.y.normalized(), _yaw_direction * delta);
 	
 	self._pitch_direction = 0
 	self._yaw_direction = 0
