@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4cy51edm6gbx"]
-
-[ext_resource type="Script" path="res://objects/air_resisitance.gd" id="1_tustu"]
-
-[node name="air_resisitance" type="Node"]
-script = ExtResource("1_tustu")
