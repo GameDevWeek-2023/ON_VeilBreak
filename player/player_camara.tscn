@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player_camara.gd" id="1_1bm1n"]
 
-[node name="SpringArm3D" type="SpringArm3D"]
-spring_length = 5.0
+[node name="SpringArm3D" type="Node3D"]
 script = ExtResource("1_1bm1n")
 
 [node name="Camera3D" type="Camera3D" parent="."]

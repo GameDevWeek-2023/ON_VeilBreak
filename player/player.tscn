@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5f8vlhw2s536"]
+[gd_scene load_steps=9 format=3 uid="uid://b5f8vlhw2s536"]
 
 [ext_resource type="PackedScene" uid="uid://copp5gxexhi85" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
 [ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="2_buvre"]
 [ext_resource type="PackedScene" uid="uid://2o2qqoeya0t7" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
 [ext_resource type="Script" path="res://player/WeaponSlot.gd" id="4_pgwje"]
+[ext_resource type="PackedScene" uid="uid://b7oa04tr8m2hc" path="res://objects/components/air_resisitance.tscn" id="6_at7qr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ioct"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghyiv"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="RigidBody3D"]
+gravity_scale = 0.0
+can_sleep = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210164, 0.00938052, 0.00014849)
@@ -37,3 +40,6 @@ script = ExtResource("4_pgwje")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
 player = NodePath("../..")
 cooldown = 0.1
+
+[node name="air_resisitance" parent="." instance=ExtResource("6_at7qr")]
+air_resistance = 100.0
