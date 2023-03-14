@@ -1,22 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://rtm3dqafifby"]
+[gd_scene load_steps=2 format=3 uid="uid://rtm3dqafifby"]
 
-[ext_resource type="Script" path="res://player/SpringArm3D.gd" id="1_npkvy"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wx3dr"]
+[ext_resource type="Script" path="res://player/movement.gd" id="1_3hurg"]
 
 [node name="Movement" type="Node3D"]
-
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-spring_length = 5.0
-script = ExtResource("1_npkvy")
-
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193743, -0.126409, 1.48876)
-current = true
-fov = 90.6
-
-[node name="pivot" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot"]
-mesh = SubResource("CapsuleMesh_wx3dr")
-skeleton = NodePath("../../../..")
+script = ExtResource("1_3hurg")

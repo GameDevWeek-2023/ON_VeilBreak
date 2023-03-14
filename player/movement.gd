@@ -1,9 +1,11 @@
-extends CharacterBody3D
+extends Node3D
 
-@export var speed := 0;
+@onready var parent = get_parent();
+@onready var mesh = get_parent().get_node("pivot")
+
 @export var acceleration = 5;
 
-@onready var _spring_arm: SpringArm3D = $SpringArm3D;
+@onready var camara: SpringArm3D = get_parent().get_node("player_camara");
 
 var target_velocity = Vector3.ZERO
 
@@ -12,16 +14,16 @@ func _physics_process(delta):
 	
 	move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left");
 	move_direction.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward");
-	move_direction = move_direction.rotated(Vector3.UP, _spring_arm.rotation.y).normalized();
+	move_direction = move_direction.rotated(Vector3.UP, camara.rotation.y).normalized();
 	if move_direction != Vector3.ZERO:
 		move_direction = move_direction.normalized();
-		$pivot.look_at(position + move_direction, Vector3.UP);
+		mesh.look_at(parent.position + move_direction, Vector3.UP);
 	
 	target_velocity.x += move_direction.x * acceleration;
 	target_velocity.z += move_direction.z * acceleration;
 	
-	velocity = target_velocity;
-	move_and_slide();
+	parent.velocity = target_velocity;
+	parent.move_and_slide();
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -30,4 +32,4 @@ func _physics_process(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_spring_arm.position = position
+	camara.position = parent.position

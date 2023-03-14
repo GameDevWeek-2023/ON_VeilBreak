@@ -1,15 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5f8vlhw2s536"]
+[gd_scene load_steps=5 format=3 uid="uid://db1x4h4bapiib"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_ulnls"]
+[ext_resource type="PackedScene" uid="uid://cpws260t447t5" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ioct"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ghyiv"]
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_ulnls")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210164, 0.00938052, 0.00014849)
 shape = SubResource("CapsuleShape3D_2ioct")
 
 [node name="Movement" parent="." instance=ExtResource("2_v5qm3")]
+acceleration = 2
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot"]
+mesh = SubResource("CapsuleMesh_ghyiv")
+skeleton = NodePath("../../../..")
+
+[node name="player_camara" parent="." instance=ExtResource("2_et1dp")]
