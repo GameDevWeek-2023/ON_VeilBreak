@@ -14,3 +14,9 @@ config/name="VeilBreak"
 run/main_scene="res://particles/ParticleTest.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+3d_physics/layer_1="Main physics"
+3d_physics/layer_9="Projectiles 1"
+3d_physics/layer_10="Projectiles 2"
