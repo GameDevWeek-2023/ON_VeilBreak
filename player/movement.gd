@@ -17,7 +17,9 @@ func _physics_process(delta):
 	move_direction = move_direction.rotated(Vector3.UP, camara.rotation.y).normalized();
 	if move_direction != Vector3.ZERO:
 		move_direction = move_direction.normalized();
-		mesh.look_at(parent.position + move_direction, Vector3.UP);
+		
+	
+	
 	
 	target_velocity.x += move_direction.x * acceleration;
 	target_velocity.z += move_direction.z * acceleration;
