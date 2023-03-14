@@ -21,4 +21,3 @@ script = ExtResource("2_yiasa")
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
 projectile = ExtResource("4_avp3x")
 projectile_manager = NodePath("../..")
-cooldown = 0.1
