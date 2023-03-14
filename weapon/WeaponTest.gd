@@ -1,8 +1,5 @@
 extends Node3D
 
-var timer : float = 0.0;
-var every : float = 2.0;
-
 @onready var weapon : Node = $Turret/Weapon;
 @onready var physics := PhysicsServer3D
 
@@ -15,7 +12,4 @@ func _ready():
 
 
 func _process(delta : float):
-	timer += delta;
-	if(timer >= every):
-		timer = 0.0;
-		weapon.shoot();
+	weapon.shoot();

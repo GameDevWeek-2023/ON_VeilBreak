@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb3k6calmstqw"]
+[gd_scene load_steps=5 format=3 uid="uid://bb3k6calmstqw"]
 
 [ext_resource type="Script" path="res://weapon/WeaponTest.gd" id="1_5kegm"]
 [ext_resource type="PackedScene" uid="uid://copp5gxexhi85" path="res://weapon/Weapon.tscn" id="1_u2fop"]
 [ext_resource type="Script" path="res://weapon/Turret.gd" id="2_yiasa"]
+[ext_resource type="PackedScene" uid="uid://uqko6cd5j8yo" path="res://weapon/TestProjectile.tscn" id="4_avp3x"]
 
 [node name="WeaponTest" type="Node3D"]
 script = ExtResource("1_5kegm")
@@ -18,4 +19,6 @@ script = ExtResource("2_yiasa")
 
 [node name="Weapon" parent="Turret" node_paths=PackedStringArray("projectile_manager") instance=ExtResource("1_u2fop")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
+projectile = ExtResource("4_avp3x")
 projectile_manager = NodePath("../..")
+cooldown = 0.1
