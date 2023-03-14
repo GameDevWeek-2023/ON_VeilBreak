@@ -11,9 +11,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghyiv"]
 
-[node name="CharacterBody3D" type="RigidBody3D"]
-gravity_scale = 0.0
-can_sleep = false
+[node name="CharacterBody3D" type="CharacterBody3D"]
+motion_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210164, 0.00938052, 0.00014849)

@@ -1,6 +1,6 @@
-extends Node3D
+extends CharacterBody3D
 
-@onready var parent : CharacterBody3D = get_parent();
+#@onready var parent : CharacterBody3D = get_parent();
 @onready var mesh = get_parent().get_node("pivot")
 
 @export var mouse_sensitivity := 2.0
@@ -28,24 +28,21 @@ func _physics_process(delta : float):
 #	var move_direction = delta_x * forward + delat_y * right
 	var move_direction = Vector3(sideway, 0, forward);
 	
+	
+		
 	if move_direction != Vector3.ZERO:
 		move_direction = move_direction.normalized();
 		
-#	print(move_direction)
-	print(_pitch_direction, _yaw_direction)
-	parent.translate(move_direction * acceleration);
-	parent.rotate(parent.transform.basis.x, _pitch_direction * delta);
-	parent.rotate(parent.transform.basis.y, _yaw_direction * delta);
-	
-	self._pitch_direction = 0
-	self._yaw_direction = 0
+	print(move_direction)
+	translate(move_direction * acceleration);
+	rotate(Vector3.RIGHT, _pitch_direction * delta);
 	
 #	var roll_direction = Input.get_action_strength("roll_left") - Input.get_action_strength("roll_right");
 #	parent.apply_torque(Vector3.RIGHT * roll_direction * 20 * delta);
 #	parent.apply_torque(Vector3.FORWARD * _pitch_direction * delta);
 #	parent.apply_torque(Vector3.UP * _yaw_direction   * delta);
 
-	parent.move_and_slide()
+	move_and_slide()
 #
 #	target_velocity.x += move_direction.x * acceleration;
 #	target_velocity.z += move_direction.z * acceleration;
