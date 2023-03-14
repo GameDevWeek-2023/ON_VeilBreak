@@ -6,7 +6,7 @@ extends Node
 
 @onready var parent : Node = get_parent();
 
-func on_shot(amount : int):
-	self.current -= amount;
+func on_shot(projectile : Node):
+	self.current -= projectile.damage;
 	if(self.current <= 0):
 		parent.queue_free();

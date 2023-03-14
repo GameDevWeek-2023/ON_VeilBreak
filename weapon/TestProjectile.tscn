@@ -4,3 +4,4 @@
 
 [node name="Projectile" instance=ExtResource("1_0hx57")]
 speed = 10.0
+damage = 3

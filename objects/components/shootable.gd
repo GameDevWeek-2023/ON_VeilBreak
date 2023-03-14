@@ -10,8 +10,8 @@ func hit(projectile):
 
 
 func _delegate_to_parent(projectile):
-	if(parent.has_method("hit")):
-		parent.hit(projectile);
+	if(parent.has_method("on_shot")):
+		parent.on_shot(projectile);
 	else:
 		print_debug("Parent has not hit(projectile)")
 
@@ -20,4 +20,4 @@ func _delegate_to_parent(projectile):
 func _delegate_to_siblings(projectile):
 	for sibling in parent.get_children():
 		if(sibling.has_method("on_shot")):
-			sibling.on_shot(1)
+			sibling.on_shot(projectile)

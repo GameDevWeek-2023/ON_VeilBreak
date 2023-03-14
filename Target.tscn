@@ -20,4 +20,4 @@ mesh = SubResource("BoxMesh_gh2ha")
 skeleton = NodePath("../..")
 
 [node name="health" parent="." instance=ExtResource("2_upq4u")]
-max = 3
+max = 9
