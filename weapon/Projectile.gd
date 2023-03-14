@@ -6,6 +6,8 @@ extends Node3D
 
 var age : float = 0.0;
 
+
+
 func _physics_process(delta  : float):
 	var direction = -get_global_transform().basis.z;
 	self.position += direction * speed * delta
@@ -13,6 +15,7 @@ func _physics_process(delta  : float):
 
 
 
+# Automatic cleanup to prevent to many projectiles
 func _manage_lifetime(delta : float):
 	age += delta;
 	if(age >= lifetime):

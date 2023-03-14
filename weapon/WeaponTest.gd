@@ -6,7 +6,6 @@ var every : float = 2.0;
 @onready var weapon : Node = $Turret/Weapon;
 @onready var physics := PhysicsServer3D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	PhysicsServer3D.area_set_param(
 		get_world_3d().get_space(), 
@@ -15,7 +14,6 @@ func _ready():
 	)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta : float):
 	timer += delta;
 	if(timer >= every):
