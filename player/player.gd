@@ -10,16 +10,6 @@ var target_velocity = Vector3.ZERO
 func _physics_process(delta):
 	var move_direction = Vector3.ZERO;
 	
-#	if Input.is_action_pressed("move_right"):
-#		move_direction.x += 1;
-#	if Input.is_action_pressed("move_left"):
-#		move_direction.x -= 1;
-#	if Input.is_action_pressed("move_back"):
-#		move_direction.z += 1;
-#	if Input.is_action_pressed("move_forward"):
-#		move_direction.z -= 1;
-	
-	
 	move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left");
 	move_direction.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward");
 	move_direction = move_direction.rotated(Vector3.UP, _spring_arm.rotation.y).normalized();
