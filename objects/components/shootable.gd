@@ -1,16 +1,23 @@
-extends PhysicsBody3D
+extends StaticBody3D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@onready var parent : Node = get_parent();
 
 
 
 func hit(projectile):
-	print("Target: Hit")
+	self._delegate_to_parent(projectile)
+	self._delegate_to_siblings(projectile)
+
+
+func _delegate_to_parent(projectile):
+	if(parent.has_method("hit")):
+		parent.hit(projectile);
+	else:
+		print_debug("Parent has not hit(projectile)")
+
+
+
+func _delegate_to_siblings(projectile):
+	for sibling in parent.get_children():
+		if(sibling.has_method("on_shot")):
+			sibling.on_shot(1)

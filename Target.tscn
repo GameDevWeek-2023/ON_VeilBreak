@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjwci3vo6ej5y"]
+[gd_scene load_steps=5 format=3 uid="uid://bjwci3vo6ej5y"]
 
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_q6lmd"]
+[ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="2_upq4u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjvyi"]
 
@@ -17,3 +18,6 @@ shape = SubResource("BoxShape3D_wjvyi")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_gh2ha")
 skeleton = NodePath("../..")
+
+[node name="health" parent="." instance=ExtResource("2_upq4u")]
+max = 3
