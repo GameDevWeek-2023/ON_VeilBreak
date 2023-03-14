@@ -9,6 +9,7 @@ func _ready():
 		PhysicsServer3D.AREA_PARAM_GRAVITY,
 		0
 	)
+	pass
 
 
 func _process(delta : float):

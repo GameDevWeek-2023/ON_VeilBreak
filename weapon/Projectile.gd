@@ -8,6 +8,11 @@ var age : float = 0.0;
 
 
 
+func _ready():
+	self.add_to_group("projectiles");
+
+
+
 func _physics_process(delta  : float):
 	var direction = -get_global_transform().basis.z;
 	self.translate(Vector3.FORWARD * speed * delta);
@@ -26,3 +31,10 @@ func _manage_lifetime(delta : float):
 func _destroy():
 	print("Projectile destroyed");
 	self.queue_free();
+
+
+
+func _on_area_3d_body_entered(target):
+	print("Projectile: Hit");
+	self._destroy();
+	target.hit(self);
