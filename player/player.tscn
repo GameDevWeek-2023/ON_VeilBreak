@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://db1x4h4bapiib"]
+[gd_scene load_steps=6 format=3 uid="uid://b5f8vlhw2s536"]
 
-[ext_resource type="PackedScene" uid="uid://cpws260t447t5" path="res://player/player_camara.tscn" id="2_et1dp"]
+[ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="2_buvre"]
+[ext_resource type="PackedScene" uid="uid://2o2qqoeya0t7" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ioct"]
@@ -21,5 +22,8 @@ acceleration = 2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pivot"]
 mesh = SubResource("CapsuleMesh_ghyiv")
 skeleton = NodePath("../../../..")
+
+[node name="thruster_exhaust" parent="pivot/MeshInstance3D" instance=ExtResource("2_buvre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="player_camara" parent="." instance=ExtResource("2_et1dp")]
