@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsbspeetmc6io"]
+
+[ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="1_0eqw3"]
+[ext_resource type="Script" path="res://objects/PhysicsController.gd" id="3_14jxn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wy5wg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3tya"]
+
+[node name="PhysicsTest" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4, 3)
+
+[node name="space_object" parent="." instance=ExtResource("1_0eqw3")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="space_object"]
+mesh = SubResource("BoxMesh_wy5wg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="space_object"]
+shape = SubResource("BoxShape3D_w3tya")
+
+[node name="PhysicsController" type="Node3D" parent="."]
+script = ExtResource("3_14jxn")
+
+[node name="space_object2" parent="." instance=ExtResource("1_0eqw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.65022, 0.6)
+linear_velocity = Vector3(0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="space_object2"]
+mesh = SubResource("BoxMesh_wy5wg")
+skeleton = NodePath("../../space_object2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="space_object2"]
+shape = SubResource("BoxShape3D_w3tya")
