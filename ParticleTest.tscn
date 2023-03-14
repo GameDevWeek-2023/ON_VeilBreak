@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://clmq3m7ex0y7w"]
 
-[ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="1_2k2af"]
+[ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="1_v2nmi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lisdw"]
 
@@ -17,5 +17,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15256e-06, -0.00377035, 0.0
 mesh = SubResource("CapsuleMesh_lisdw")
 skeleton = NodePath("../Camera3D")
 
-[node name="thruster_exhaust" parent="MeshInstance3D" instance=ExtResource("1_2k2af")]
+[node name="thruster_exhaust" parent="MeshInstance3D" instance=ExtResource("1_v2nmi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
