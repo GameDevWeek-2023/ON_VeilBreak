@@ -1,8 +1,5 @@
 extends Node3D
 
-# import / #include
-const Geometry = preload("res://utils/Geometry.gd")
-
 @onready var parent : CharacterBody3D = get_parent();
 @onready var mesh = get_parent().get_node("pivot")
 
@@ -21,9 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 
-
 func _physics_process(delta : float):
-	
 	var sideway = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"));
 	var forward = (Input.get_action_strength("move_back") - Input.get_action_strength("move_forward"));
 	var up = (Input.get_action_strength("move_up") - Input.get_action_strength("move_down"));
