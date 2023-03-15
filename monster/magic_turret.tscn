@@ -6,6 +6,7 @@
 
 [node name="magic_turret" type="Node3D" node_paths=PackedStringArray("user", "muzzle")]
 script = ExtResource("1_q70mv")
+team = 1
 projectile = ExtResource("2_0vgkv")
 user = NodePath(".")
 cooldown = 0.1
