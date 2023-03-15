@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk750fnnd7x02"]
+[gd_scene load_steps=12 format=3 uid="uid://bk750fnnd7x02"]
 
 [ext_resource type="PackedScene" uid="uid://b5f8vlhw2s536" path="res://player/player.tscn" id="1_dmgsb"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="2_qkmbv"]
@@ -18,6 +18,8 @@ size = Vector3(60, 2, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_d1r68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_okyp6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tap4f"]
 
 [node name="Level" type="Node3D"]
 
@@ -63,3 +65,10 @@ shape = SubResource("BoxShape3D_okyp6")
 
 [node name="magic_turret" parent="." instance=ExtResource("4_xnmqo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6978, 5.3067, 27.0922)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.999997, 0.00223683, -0.000380262, -0.00223683, 0.999997, -3.5549e-06, 0.000380253, 4.41462e-06, 1, -47, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, -7.44799e-12, 0, -5.55217e-12, 1, 2.27374e-13, 0, 2.27374e-13, 1, -12, -7.45058e-09, 0)
+mesh = SubResource("BoxMesh_tap4f")
