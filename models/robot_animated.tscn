@@ -898,7 +898,7 @@ states/Fly/node = SubResource("AnimationNodeBlendSpace2D_1he6r")
 states/Fly/position = Vector2(432, 115.333)
 transitions = ["Start", "Fly", SubResource("AnimationNodeStateMachineTransition_vp24s")]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_b3v2h"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_k7r87"]
 
 [node name="robot" instance=ExtResource("1_ljt3i")]
 script = ExtResource("2_wgm8n")
@@ -934,14 +934,14 @@ transform = Transform3D(1.19209e-07, -1, 0, 0, 0, 1, -1, -1.19209e-07, 0, 0.2, -
 bone_idx = 2
 
 [node name="thruster_exhaust" parent="Armature/Skeleton3D/thruster_r/thruster_r" index="0" instance=ExtResource("3_xkmho")]
-transform = Transform3D(1, 1.19209e-07, 1.19209e-07, 1.19209e-07, -4.37114e-08, -1, -1.19209e-07, 1, -4.37114e-08, 0, 0, -0.4)
+transform = Transform3D(1, 1.19209e-07, 1.19209e-07, 1.19209e-07, -4.37114e-08, -1, -1.19209e-07, 1, -4.37114e-08, 0, 0, -0.5)
 
 [node name="thruster_l" parent="Armature/Skeleton3D" index="1"]
 transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, -0.2, -1.2, 1.50996e-08)
 bone_idx = 4
 
 [node name="thruster_exhaust" parent="Armature/Skeleton3D/thruster_l/thruster_l" index="0" instance=ExtResource("3_xkmho")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.4)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.5)
 
 [node name="torso" parent="Armature/Skeleton3D" index="2"]
 transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, -0.5, -9.05975e-08)
@@ -967,5 +967,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_2sbyd")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_b3v2h")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_k7r87")
 parameters/Fly/blend_position = Vector2(-0.234735, 0.0386741)
