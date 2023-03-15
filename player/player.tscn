@@ -11,18 +11,14 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghyiv"]
 
-[node name="CharacterBody3D" type="RigidBody3D"]
-gravity_scale = 0.0
-continuous_cd = true
-max_contacts_reported = 100
-can_sleep = false
-freeze = true
+[node name="Player" type="CharacterBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210164, 0.00938052, 0.00014849)
 shape = SubResource("CapsuleShape3D_2ioct")
 
 [node name="Movement" parent="." instance=ExtResource("2_v5qm3")]
+speed = 10
 
 [node name="pivot" type="Node3D" parent="."]
 

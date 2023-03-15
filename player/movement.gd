@@ -3,13 +3,11 @@ extends Node3D
 # import / #include
 const Geometry = preload("res://utils/Geometry.gd")
 
-@onready var parent : RigidBody3D = get_parent();
+@onready var parent : CharacterBody3D = get_parent();
 @onready var mesh = get_parent().get_node("pivot")
 
 @export var mouse_sensitivity := 2.0
 @export var speed = 100;
-
-var target_velocity = Vector3.ZERO
 
 var _yaw_direction : float = 0.0;
 var _pitch_direction : float = 0.0;
@@ -20,8 +18,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		self._pitch_direction = -event.relative.y; 
 		self._yaw_direction = -event.relative.x;
-
-
 
 
 
@@ -43,14 +39,20 @@ func _physics_process(delta : float):
 	parent.rotate(parent.transform.basis.x.normalized(), _pitch_direction * delta);
 	parent.rotate(parent.transform.basis.y.normalized(), _yaw_direction * delta);
 	parent.rotate(parent.transform.basis.z.normalized(), roll_direction * 5 * delta);
+	parent.velocity = move_direction * speed;
+	var has_collided = parent.move_and_slide();
 	
-#	parent.angular_velocity = Vector3.ZERO
-	var collision = parent.move_and_collide(move_direction * speed * delta);
-	if(collision):
-		var slide_movement = Geometry.project_on_plane(collision.get_remainder(), collision.get_normal());
-		parent.move_and_collide(slide_movement);
+	if(has_collided):
+		_push_other_objects();
 	
 	self._pitch_direction = 0
 	self._yaw_direction = 0
 	
-#
+	
+	
+func _push_other_objects():
+		for i in parent.get_slide_collision_count():
+			var collision = parent.get_slide_collision(i)
+			var collider = collision.get_collider();
+			if collider is RigidBody3D:
+				collider.apply_force(collision.get_normal() * -speed)	
