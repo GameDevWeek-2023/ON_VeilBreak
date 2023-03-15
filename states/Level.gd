@@ -13,3 +13,8 @@ func _process(delta):
 
 func gameover():
 	main.swap_scene(load("res://states/GameOver.tscn"))
+
+
+
+func victory():
+	main.swap_scene(load("res://states/Victory.tscn"))

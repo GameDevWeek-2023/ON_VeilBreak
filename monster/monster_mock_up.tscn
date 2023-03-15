@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://sicl4kuqh5do"]
+
+[ext_resource type="Script" path="res://monster/monster_mock_up.gd" id="1_cbi1g"]
+[ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_k38ra"]
+[ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="1_lbat8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fides"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ayk4x"]
+radius = 2.0
+height = 4.0
+
+[node name="MonsterMochUp" type="RigidBody3D"]
+script = ExtResource("1_cbi1g")
+
+[node name="health" parent="." instance=ExtResource("1_lbat8")]
+
+[node name="shootable" parent="." instance=ExtResource("1_k38ra")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_fides")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ayk4x")

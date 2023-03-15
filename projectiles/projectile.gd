@@ -13,6 +13,7 @@ func init(team : Team.Enum):
 	self.team = team;
 
 
+
 func _ready():
 	self.add_to_group("projectiles");
 
@@ -34,12 +35,12 @@ func _manage_lifetime(delta : float):
 
 
 func _destroy():
-	print("Projectile destroyed");
+	# print("Projectile destroyed");
 	self.queue_free();
 
 
 
 func _on_body_entered(target):
-	print("Projectile: Hit");
+	# print("Projectile: Hit");
 	self._destroy();
 	target.hit(self);

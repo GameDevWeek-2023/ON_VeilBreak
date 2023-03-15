@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bk750fnnd7x02"]
+[gd_scene load_steps=14 format=3 uid="uid://bk750fnnd7x02"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_dmgsb"]
 [ext_resource type="Script" path="res://states/Level.gd" id="1_jp44e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="2_xcpkc"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="3_74f73"]
 [ext_resource type="PackedScene" uid="uid://dq2d1k0qt44r" path="res://monster/magic_turret.tscn" id="4_xnmqo"]
+[ext_resource type="PackedScene" uid="uid://sicl4kuqh5do" path="res://monster/monster_mock_up.tscn" id="7_adcog"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2d17"]
 size = Vector3(60, 2, 60)
@@ -74,3 +75,7 @@ transform = Transform3D(0.999997, 0.00223683, -0.000380262, -0.00223683, 0.99999
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, -7.44799e-12, 0, -5.55217e-12, 1, 2.27374e-13, 0, 2.27374e-13, 1, -12, -7.45058e-09, 0)
 mesh = SubResource("BoxMesh_tap4f")
+
+[node name="MonsterMochUp" parent="." instance=ExtResource("7_adcog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1184, 10, -33.4691)
+gravity_scale = 0.0

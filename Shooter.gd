@@ -18,7 +18,7 @@ func _do_shoot():
 		proj.rotation = muzzle.global_rotation;
 		proj.init(user.team);
 		user.get_parent().add_child(proj);
-		print("Shoot");
+		# print("Shoot");
 		self.timer = self.cooldown;
 	
 func _process(delta : float):

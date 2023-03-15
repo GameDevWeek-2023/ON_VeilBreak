@@ -16,7 +16,8 @@ func _delegate_to_parent(projectile):
 	if(parent.has_method("on_shot")):
 		parent.on_shot(projectile);
 	else:
-		print_debug("Parent has not hit(projectile)")
+		pass
+		# print_debug("Parent has not hit(projectile)")
 
 
 
