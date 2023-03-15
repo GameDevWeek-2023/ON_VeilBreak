@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://wp3xsxedw6i5"]
+
+[ext_resource type="Material" uid="uid://bfh1hfyy3lcm0" path="res://monster/glow_orb_outer.tres" id="1_6fg5o"]
+[ext_resource type="Material" uid="uid://snojxgtwaipq" path="res://monster/glow_orb_inner.tres" id="2_0n4j7"]
+[ext_resource type="Material" uid="uid://buqaws0wgn5oj" path="res://monster/glow_orb_particles.tres" id="3_5fdro"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_y00k5"]
+material = ExtResource("1_6fg5o")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rdek0"]
+material = ExtResource("2_0n4j7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ardtw"]
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+angle_min = -180.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_bx24b"]
+material = ExtResource("3_5fdro")
+radius = 0.1
+height = 0.2
+
+[node name="glow_orb" type="Node3D"]
+
+[node name="shell1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00849807, 0.000559002, -0.00977126)
+mesh = SubResource("SphereMesh_y00k5")
+
+[node name="shell2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = SubResource("SphereMesh_y00k5")
+skeleton = NodePath("../..")
+
+[node name="shell3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00919604, 0.0063675, 0.00215524)
+mesh = SubResource("SphereMesh_rdek0")
+skeleton = NodePath("../shell2")
+
+[node name="light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00834703, 0.0026153, -0.00962213)
+light_color = Color(1, 0.164706, 1, 1)
+light_energy = 2.0
+light_size = 0.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 64
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_ardtw")
+draw_pass_1 = SubResource("SphereMesh_bx24b")
