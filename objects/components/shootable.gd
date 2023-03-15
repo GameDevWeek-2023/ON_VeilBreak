@@ -5,7 +5,8 @@ extends StaticBody3D
 
 
 func hit(projectile):
-	if(projectile.team != parent.team):
+	
+	if(projectile.get("team") != projectile.get("team")):
 		self._delegate_to_parent(projectile)
 		self._delegate_to_siblings(projectile)
 
