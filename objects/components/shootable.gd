@@ -11,6 +11,7 @@ func hit(projectile):
 		self._delegate_to_siblings(projectile)
 
 
+
 func _delegate_to_parent(projectile):
 	if(parent.has_method("on_shot")):
 		parent.on_shot(projectile);

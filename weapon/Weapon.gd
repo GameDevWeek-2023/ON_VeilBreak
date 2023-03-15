@@ -27,6 +27,7 @@ func shoot():
 		var proj = projectile.instantiate();
 		proj.position = muzzle.global_position;
 		proj.rotation = muzzle.global_rotation;
+		proj.init(player.team);
 		player.get_parent().add_child(proj);
 		print("Shoot");
 		self.timer = self.cooldown;
