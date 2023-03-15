@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5f8vlhw2s536"]
+[gd_scene load_steps=10 format=3 uid="uid://b5f8vlhw2s536"]
 
 [ext_resource type="PackedScene" uid="uid://dfihqbapo6i5x" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_lsee7"]
-[ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="2_buvre"]
 [ext_resource type="PackedScene" uid="uid://2o2qqoeya0t7" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
 [ext_resource type="Script" path="res://player/WeaponSlot.gd" id="4_pgwje"]
@@ -36,9 +35,6 @@ cooldown = 0.1
 
 [node name="air_resisitance" parent="." instance=ExtResource("6_at7qr")]
 air_resistance = 100.0
-
-[node name="thruster_exhaust" parent="." instance=ExtResource("2_buvre")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="robot" parent="." instance=ExtResource("9_4bmx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.959648, 0)
