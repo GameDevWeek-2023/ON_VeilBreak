@@ -43,7 +43,7 @@ func _physics_process(delta : float):
 	var has_collided = parent.move_and_slide();
 	
 	if(has_collided):
-		_push_other_objects();
+		self._push_other_objects();
 	
 	self._pitch_direction = 0
 	self._yaw_direction = 0
@@ -51,8 +51,8 @@ func _physics_process(delta : float):
 	
 	
 func _push_other_objects():
-		for i in parent.get_slide_collision_count():
-			var collision = parent.get_slide_collision(i)
-			var collider = collision.get_collider();
-			if collider is RigidBody3D:
-				collider.apply_force(collision.get_normal() * -speed)	
+	for i in parent.get_slide_collision_count():
+		var collision = parent.get_slide_collision(i)
+		var collider = collision.get_collider();
+		if collider is RigidBody3D:
+			collider.apply_force(collision.get_normal() * -speed)	
