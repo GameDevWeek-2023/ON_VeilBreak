@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjwci3vo6ej5y"]
+[gd_scene load_steps=6 format=3 uid="uid://bjwci3vo6ej5y"]
 
+[ext_resource type="Script" path="res://Target.gd" id="1_jxpxw"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_q6lmd"]
 [ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="2_upq4u"]
 
@@ -9,6 +10,7 @@
 
 [node name="Target" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+script = ExtResource("1_jxpxw")
 
 [node name="shootable" parent="." instance=ExtResource("1_q6lmd")]
 
