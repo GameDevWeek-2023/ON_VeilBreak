@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk750fnnd7x02"]
+[gd_scene load_steps=8 format=3 uid="uid://bk750fnnd7x02"]
 
 [ext_resource type="PackedScene" uid="uid://b5f8vlhw2s536" path="res://player/player.tscn" id="1_dmgsb"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="2_qkmbv"]
+[ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="3_74f73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2d17"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wylex"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bremu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23ad3"]
 
 [node name="Base" type="Node3D"]
 
@@ -35,3 +40,14 @@ freeze = true
 [node name="Target2" parent="." instance=ExtResource("2_qkmbv")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 10.0647, 5.15365, 7.83223)
 freeze = true
+
+[node name="space_object2" parent="." instance=ExtResource("3_74f73")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 16.5, 1.65022, 0.6)
+linear_velocity = Vector3(0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="space_object2"]
+mesh = SubResource("BoxMesh_bremu")
+skeleton = NodePath("../../space_object2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="space_object2"]
+shape = SubResource("BoxShape3D_23ad3")

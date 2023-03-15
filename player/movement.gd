@@ -7,7 +7,7 @@ const Geometry = preload("res://utils/Geometry.gd")
 @onready var mesh = get_parent().get_node("pivot")
 
 @export var mouse_sensitivity := 2.0
-@export var acceleration = 5;
+@export var speed = 100;
 
 var target_velocity = Vector3.ZERO
 
@@ -45,7 +45,7 @@ func _physics_process(delta : float):
 	parent.rotate(parent.transform.basis.z.normalized(), roll_direction * 5 * delta);
 	
 #	parent.angular_velocity = Vector3.ZERO
-	var collision = parent.move_and_collide(move_direction * acceleration);
+	var collision = parent.move_and_collide(move_direction * speed * delta);
 	if(collision):
 		var slide_movement = Geometry.project_on_plane(collision.get_remainder(), collision.get_normal());
 		parent.move_and_collide(slide_movement);
