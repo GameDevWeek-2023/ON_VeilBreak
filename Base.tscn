@@ -19,7 +19,7 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_okyp6"]
 
-[node name="Base" type="Node3D"]
+[node name="Level" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_dmgsb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0602422, 2.77691, 15.7307)
@@ -57,7 +57,6 @@ gravity_scale = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="space_object2"]
 mesh = SubResource("BoxMesh_d1r68")
-skeleton = NodePath("../../space_object2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="space_object2"]
 shape = SubResource("BoxShape3D_okyp6")
