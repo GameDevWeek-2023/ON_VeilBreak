@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn00vlor687ie"]
+[gd_scene load_steps=4 format=3 uid="uid://d08mptylgtsr"]
 
-[ext_resource type="Script" path="res://weapon/Projectile.gd" id="1_aqkws"]
+[ext_resource type="Script" path="res://weapon/projectile.gd" id="1_hk8os"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_wf7s0"]
 radius = 0.1
@@ -11,7 +11,7 @@ height = 0.2
 [node name="Projectile" type="Area3D"]
 collision_layer = 256
 collision_mask = 256
-script = ExtResource("1_aqkws")
+script = ExtResource("1_hk8os")
 
 [node name="model" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_wf7s0")

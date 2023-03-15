@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://copp5gxexhi85"]
 
 [ext_resource type="Script" path="res://weapon/Weapon.gd" id="1_vkg36"]
-[ext_resource type="PackedScene" uid="uid://uqko6cd5j8yo" path="res://weapon/TestProjectile.tscn" id="2_g2g0v"]
+[ext_resource type="PackedScene" path="res://weapon/TestProjectile.tscn" id="2_g2g0v"]
 
 [sub_resource type="Curve" id="Curve_mv5tv"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0451923, 1), 0.0, 0.0, 0, 0, Vector2(0.132692, 0.374233), -5.2203, -5.2203, 0, 0, Vector2(0.391346, 0.0490798), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
