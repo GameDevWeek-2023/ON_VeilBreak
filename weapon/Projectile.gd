@@ -35,7 +35,7 @@ func _destroy():
 
 
 
-func _on_area_3d_body_entered(target):
+func _on_body_entered(target):
 	print("Projectile: Hit");
 	self._destroy();
 	target.hit(self);
