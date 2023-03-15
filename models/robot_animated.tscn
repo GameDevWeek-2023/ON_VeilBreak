@@ -948,7 +948,7 @@ transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, -0.5, -9.05975e-08)
 bone_idx = 5
 
 [node name="arm_l_2" parent="Armature/Skeleton3D" index="3"]
-transform = Transform3D(5.96046e-08, -0.894427, 0.447214, 7.4476e-16, 0.447214, 0.894427, -1, 5.96047e-08, 5.55111e-16, -0.6, -0.5, 2.22044e-15)
+transform = Transform3D(5.96046e-08, -0.894427, 0.447214, 7.4476e-16, 0.447214, 0.894427, -1, 5.96046e-08, 5.55111e-16, -0.6, -0.5, 2.22044e-15)
 bone_idx = 7
 
 [node name="arm_r_2" parent="Armature/Skeleton3D" index="4"]
