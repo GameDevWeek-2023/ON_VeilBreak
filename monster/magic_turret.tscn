@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq2d1k0qt44r"]
+[gd_scene load_steps=4 format=3 uid="uid://dq2d1k0qt44r"]
 
 [ext_resource type="PackedScene" uid="uid://wp3xsxedw6i5" path="res://monster/glow_orb.tscn" id="1_7wrpx"]
+[ext_resource type="Script" path="res://monster/magic_turret.gd" id="1_q70mv"]
+[ext_resource type="PackedScene" uid="uid://cd5csogdrrvk0" path="res://projectiles/magic_projectiles_1.tscn" id="2_0vgkv"]
 
-[node name="magic_turret" type="Node3D"]
+[node name="magic_turret" type="Node3D" node_paths=PackedStringArray("user", "muzzle")]
+script = ExtResource("1_q70mv")
+projectile = ExtResource("2_0vgkv")
+user = NodePath(".")
+cooldown = 0.1
+muzzle = NodePath("muzzle")
 
 [node name="glow_orb" parent="." instance=ExtResource("1_7wrpx")]
+
+[node name="muzzle" type="Node3D" parent="."]

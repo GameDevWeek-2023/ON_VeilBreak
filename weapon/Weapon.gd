@@ -1,13 +1,9 @@
-extends Node3D
+extends "res://Shooter.gd"
 
 # Type of ammo to use
-@export var projectile : PackedScene;
 
 # Parent Node where projectiles are put in
 # Might refactor later
-@export var player : Node;
-
-@export var cooldown : float = 1.0;
 
 @export var recoil_push : float = 1.0;
 @export var recoil_rotate : float = 1.0;
@@ -15,22 +11,12 @@ extends Node3D
 @export var recoil_curve : Curve;
 
 # Front of barrel wher projectiles are created at
-@onready var muzzle := $RecoilPivot/Muzzle
 @onready var pivot := $RecoilPivot
-
-var timer : float = 0.0
 
 
 # Fire projectile
 func shoot():
-	if(self.timer <= 0):
-		var proj = projectile.instantiate();
-		proj.position = muzzle.global_position;
-		proj.rotation = muzzle.global_rotation;
-		proj.init(player.team);
-		player.get_parent().add_child(proj);
-		print("Shoot");
-		self.timer = self.cooldown;
+	self._do_shoot();
 	
 	
 

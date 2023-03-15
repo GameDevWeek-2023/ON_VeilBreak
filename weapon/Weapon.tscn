@@ -10,10 +10,11 @@ point_count = 5
 top_radius = 0.1
 bottom_radius = 0.2
 
-[node name="Weapon" type="Node3D"]
+[node name="Weapon" type="Node3D" node_paths=PackedStringArray("muzzle")]
 script = ExtResource("1_vkg36")
 recoil_rotate = 0.2
 recoil_curve = SubResource("Curve_mv5tv")
+muzzle = NodePath("RecoilPivot/Muzzle")
 
 [node name="RecoilPivot" type="Node3D" parent="."]
 

@@ -38,10 +38,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="WeaponSlot" type="Node3D" parent="."]
 script = ExtResource("4_pgwje")
 
-[node name="Weapon" parent="WeaponSlot" node_paths=PackedStringArray("player") instance=ExtResource("1_d0ojn")]
+[node name="Weapon" parent="WeaponSlot" node_paths=PackedStringArray("user") instance=ExtResource("1_d0ojn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
 projectile = ExtResource("6_a4cse")
-player = NodePath("../..")
+user = NodePath("../..")
 cooldown = 0.1
 
 [node name="air_resisitance" parent="." instance=ExtResource("6_at7qr")]
