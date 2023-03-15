@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5f8vlhw2s536"]
+[gd_scene load_steps=10 format=3 uid="uid://b5f8vlhw2s536"]
 
-[ext_resource type="PackedScene" uid="uid://copp5gxexhi85" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
+[ext_resource type="PackedScene" uid="uid://dfihqbapo6i5x" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
 [ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="2_buvre"]
 [ext_resource type="PackedScene" uid="uid://2o2qqoeya0t7" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
 [ext_resource type="Script" path="res://player/WeaponSlot.gd" id="4_pgwje"]
+[ext_resource type="PackedScene" uid="uid://ca46gn7c2m51u" path="res://projectiles/projectile.tscn" id="6_a4cse"]
 [ext_resource type="PackedScene" uid="uid://b7oa04tr8m2hc" path="res://objects/components/air_resisitance.tscn" id="6_at7qr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ioct"]
@@ -36,6 +37,7 @@ script = ExtResource("4_pgwje")
 
 [node name="Weapon" parent="WeaponSlot" node_paths=PackedStringArray("player") instance=ExtResource("1_d0ojn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
+projectile = ExtResource("6_a4cse")
 player = NodePath("../..")
 cooldown = 0.1
 
