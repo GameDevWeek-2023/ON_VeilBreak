@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bk750fnnd7x02"]
+[gd_scene load_steps=13 format=3 uid="uid://bk750fnnd7x02"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_dmgsb"]
+[ext_resource type="Script" path="res://states/Level.gd" id="1_jp44e"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="2_qkmbv"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="2_xcpkc"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="3_74f73"]
@@ -22,6 +23,7 @@ size = Vector3(60, 2, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_tap4f"]
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_jp44e")
 
 [node name="Player" parent="." instance=ExtResource("1_dmgsb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0602422, 2.77691, 15.7307)
