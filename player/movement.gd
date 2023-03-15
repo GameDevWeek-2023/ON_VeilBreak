@@ -1,5 +1,8 @@
 extends Node3D
 
+# import / #include
+const Geometry = preload("res://utils/Geometry.gd")
+
 @onready var parent : RigidBody3D = get_parent();
 @onready var mesh = get_parent().get_node("pivot")
 
@@ -17,6 +20,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		self._pitch_direction = -event.relative.y; 
 		self._yaw_direction = -event.relative.x;
+
+
+
 
 
 
@@ -39,7 +45,10 @@ func _physics_process(delta : float):
 	parent.rotate(parent.transform.basis.z.normalized(), roll_direction * 5 * delta);
 	
 #	parent.angular_velocity = Vector3.ZERO
-	parent.move_and_collide(move_direction * acceleration)
+	var collision = parent.move_and_collide(move_direction * acceleration);
+	if(collision):
+		var slide_movement = Geometry.project_on_plane(collision.get_remainder(), collision.get_normal());
+		parent.move_and_collide(slide_movement);
 	
 	self._pitch_direction = 0
 	self._yaw_direction = 0
