@@ -1,12 +1,14 @@
 extends StaticBody3D
 
+@export var team : Team.Enum = Team.Enum.NEUTRAL;
 @onready var parent : Node = get_parent();
 
 
 
 func hit(projectile):
-	self._delegate_to_parent(projectile)
-	self._delegate_to_siblings(projectile)
+	if(projectile.team != self.team):
+		self._delegate_to_parent(projectile)
+		self._delegate_to_siblings(projectile)
 
 
 func _delegate_to_parent(projectile):

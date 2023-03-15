@@ -1,9 +1,9 @@
 extends Node3D
 
-
 @export var speed : float = 10;
 @export var lifetime : float = 5.0;
 @export var damage : int = 1.0
+@export var team : Team.Enum = Team.Enum.NEUTRAL;
 
 var age : float = 0.0;
 
