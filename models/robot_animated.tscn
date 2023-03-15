@@ -853,7 +853,7 @@ tracks/22/enabled = true
 tracks/22/path = NodePath("Armature/Skeleton3D:arm_l_2")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
-tracks/22/keys = PackedFloat32Array(0, 1, 0.356652, -0.0607705, -0.911458, 0.195832)
+tracks/22/keys = PackedFloat32Array(0, 1, -0.356652, 0.0607705, 0.911458, -0.195832)
 tracks/23/type = "scale_3d"
 tracks/23/imported = false
 tracks/23/enabled = true
@@ -874,7 +874,7 @@ tracks/25/enabled = true
 tracks/25/path = NodePath("Armature/Skeleton3D:arm_r")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
-tracks/25/keys = PackedFloat32Array(0, 1, -0.447079, 0.447079, -0.547832, 0.547832)
+tracks/25/keys = PackedFloat32Array(0, 1, 0.447079, -0.447079, 0.547832, -0.547832)
 tracks/26/type = "scale_3d"
 tracks/26/imported = false
 tracks/26/enabled = true
@@ -909,7 +909,7 @@ tracks/30/enabled = true
 tracks/30/path = NodePath("Armature/Skeleton3D:head")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
-tracks/30/keys = PackedFloat32Array(0, 1, 0, 0.2, 0.103739)
+tracks/30/keys = PackedFloat32Array(0, 1, 0.000474975, 0.200475, 0.000474975)
 tracks/31/type = "rotation_3d"
 tracks/31/imported = false
 tracks/31/enabled = true
@@ -1108,7 +1108,7 @@ tracks/22/enabled = true
 tracks/22/path = NodePath("Armature/Skeleton3D:arm_l_2")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
-tracks/22/keys = PackedFloat32Array(0, 1, 0.356652, -0.0607705, -0.911458, 0.195832)
+tracks/22/keys = PackedFloat32Array(0, 1, -0.356652, 0.0607705, 0.911458, -0.195832)
 tracks/23/type = "scale_3d"
 tracks/23/imported = false
 tracks/23/enabled = true
@@ -1129,7 +1129,7 @@ tracks/25/enabled = true
 tracks/25/path = NodePath("Armature/Skeleton3D:arm_r")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
-tracks/25/keys = PackedFloat32Array(0, 1, -0.447079, 0.447079, -0.547832, 0.547832)
+tracks/25/keys = PackedFloat32Array(0, 1, 0.447079, -0.447079, 0.547832, -0.547832)
 tracks/26/type = "scale_3d"
 tracks/26/imported = false
 tracks/26/enabled = true
@@ -1164,7 +1164,7 @@ tracks/30/enabled = true
 tracks/30/path = NodePath("Armature/Skeleton3D:head")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
-tracks/30/keys = PackedFloat32Array(0, 1, 0, 0.2, -0.198162)
+tracks/30/keys = PackedFloat32Array(0, 1, 0.000474975, 0.200475, 0.000474975)
 tracks/31/type = "rotation_3d"
 tracks/31/imported = false
 tracks/31/enabled = true
@@ -1255,7 +1255,6 @@ transitions = ["Start", "Fly", SubResource("AnimationNodeStateMachineTransition_
 script = ExtResource("2_wgm8n")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000278234, 2.38419e-07, -0.0074181)
 bones/0/position = Vector3(0, -0.0999999, 1.49012e-08)
 bones/0/scale = Vector3(0.999999, 1, 0.999999)
 bones/1/position = Vector3(1.50874e-08, 1, -0.2)
@@ -1268,7 +1267,7 @@ bones/6/scale = Vector3(1, 1, 1)
 bones/8/rotation = Quaternion(-0.447079, 0.447079, -0.547832, 0.547832)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/scale = Vector3(0.105219, 0.465991, 0.163098)
-bones/10/position = Vector3(0, 0.2, -0.198162)
+bones/10/position = Vector3(0.000474975, 0.200475, 0.000474975)
 
 [node name="thruster_r" parent="Armature/Skeleton3D" index="0"]
 transform = Transform3D(2.98023e-07, -0.999998, 0, 0, 0, 1, -0.999998, -2.38418e-07, 0, 0.2, -1.2, 2.36556e-08)
@@ -1300,7 +1299,7 @@ transform = Transform3D(3.65616e-16, 0.45653, -0.032698, -0.105219, 5.55505e-08,
 bone_idx = 9
 
 [node name="head_2" parent="Armature/Skeleton3D" index="5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.1, -0.198162)
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.000474975, 0.100475, 0.000474975)
 bone_idx = 11
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
