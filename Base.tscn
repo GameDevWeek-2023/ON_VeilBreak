@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bk750fnnd7x02"]
 
-[ext_resource type="PackedScene" uid="uid://b5f8vlhw2s536" path="res://player/player.tscn" id="1_dmgsb"]
+[ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_dmgsb"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="2_qkmbv"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="2_xcpkc"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="3_74f73"]
