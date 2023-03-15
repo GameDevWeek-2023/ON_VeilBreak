@@ -2,5 +2,5 @@ extends Node3D
 
 @export var team : Team.Enum = Team.Enum.NEUTRAL;
 
-func _process(delta):
-	pass
+func on_death():
+	get_parent().gameover();
