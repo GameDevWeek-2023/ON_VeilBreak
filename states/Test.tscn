@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddey1vdm72qan"]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="Script" path="res://states/Test.gd" id="1_b3l7m"]
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="2_ak5r5"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="3_r0g3r"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="4_unjqi"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="5_m33c8"]
-[ext_resource type="PackedScene" uid="uid://dq2d1k0qt44r" path="res://monster/magic_turret.tscn" id="6_sfiyg"]
-[ext_resource type="PackedScene" uid="uid://sicl4kuqh5do" path="res://monster/monster_mock_up.tscn" id="7_p1nnf"]
+[ext_resource type="PackedScene" path="res://objects/magic_turret.tscn" id="6_sfiyg"]
+[ext_resource type="PackedScene" path="res://objects/monster_mock_up.tscn" id="7_p1nnf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2d17"]
 size = Vector3(60, 2, 60)

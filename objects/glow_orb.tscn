@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://wp3xsxedw6i5"]
 
-[ext_resource type="Material" uid="uid://bfh1hfyy3lcm0" path="res://monster/glow_orb_outer.tres" id="1_6fg5o"]
-[ext_resource type="Material" uid="uid://snojxgtwaipq" path="res://monster/glow_orb_inner.tres" id="2_0n4j7"]
-[ext_resource type="Material" uid="uid://buqaws0wgn5oj" path="res://monster/glow_orb_particles.tres" id="3_5fdro"]
+[ext_resource type="Material" uid="uid://bfh1hfyy3lcm0" path="res://objects/glow_orb_outer.tres" id="1_6fg5o"]
+[ext_resource type="Material" uid="uid://snojxgtwaipq" path="res://objects/glow_orb_inner.tres" id="2_0n4j7"]
+[ext_resource type="Material" uid="uid://buqaws0wgn5oj" path="res://objects/glow_orb_particles.tres" id="3_5fdro"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_y00k5"]
 material = ExtResource("1_6fg5o")

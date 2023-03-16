@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvnyrqm2p52s4"]
+[gd_scene load_steps=13 format=3 uid="uid://i2rv64vi57jv"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_dmgsb"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="2_qkmbv"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="2_xcpkc"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="3_74f73"]
-[ext_resource type="PackedScene" uid="uid://dq2d1k0qt44r" path="res://monster/magic_turret.tscn" id="4_xnmqo"]
+[ext_resource type="PackedScene" uid="uid://b54aqylhapun0" path="res://objects/magic_turret.tscn" id="4_xnmqo"]
 [ext_resource type="PackedScene" uid="uid://blh0vgq0vf1ht" path="res://Hologram.tscn" id="6_a06u5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2d17"]
