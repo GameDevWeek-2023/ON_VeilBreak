@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 @export var team : Team.Enum = Team.Enum.NEUTRAL;
 
