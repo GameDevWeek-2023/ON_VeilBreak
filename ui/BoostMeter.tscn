@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu7vy5ntun43q"]
+
+[ext_resource type="Script" path="res://ui/BoostMeter.gd" id="2_ixlmh"]
+
+[node name="Ring" type="Node2D"]
+position = Vector2(256, 256)
+script = ExtResource("2_ixlmh")
+ring_color = Color(0.478431, 0.898039, 1, 1)
+back_color = Color(0, 0, 0, 0.74902)
+start_angle = 45.0
+
+[node name="pointer" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(128, -8, 240, -8, 240, 8, 128, 8)

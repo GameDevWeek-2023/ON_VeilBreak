@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://blh0vgq0vf1ht"]
+
+[ext_resource type="PackedScene" uid="uid://cu7vy5ntun43q" path="res://ui/BoostMeter.tscn" id="1_1pydp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_txwpt"]
+viewport_path = NodePath("SubViewport")
+
+[node name="BackDisplay" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = SubResource("ViewportTexture_txwpt")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Ring" parent="SubViewport" instance=ExtResource("1_1pydp")]
