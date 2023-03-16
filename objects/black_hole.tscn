@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://2m4b7kjn8b5i"]
+
+[ext_resource type="PackedScene" uid="uid://d2mi84frdx555" path="res://objects/gravity_hole.tscn" id="1_trf4g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2775"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0nk1r"]
+material = SubResource("StandardMaterial3D_s2775")
+
+[node name="BlackHole" instance=ExtResource("1_trf4g")]
+gravity_g = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+mesh = SubResource("SphereMesh_0nk1r")

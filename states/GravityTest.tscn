@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp72n07r3b4h4"]
+[gd_scene load_steps=7 format=3 uid="uid://cp72n07r3b4h4"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_6bpxl"]
-[ext_resource type="PackedScene" uid="uid://d2mi84frdx555" path="res://objects/gravity_hole.tscn" id="1_tbxrj"]
 [ext_resource type="Script" path="res://objects/PhysicsController.gd" id="1_uv5o2"]
+[ext_resource type="PackedScene" uid="uid://4khjakna7utn" path="res://objects/white_hole.tscn" id="2_2oyve"]
+[ext_resource type="PackedScene" uid="uid://2m4b7kjn8b5i" path="res://objects/black_hole.tscn" id="3_2ukf8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_chs8t"]
 
@@ -11,12 +12,12 @@
 [node name="GravityTest" type="Node3D"]
 script = ExtResource("1_uv5o2")
 
-[node name="GravityHole" parent="." node_paths=PackedStringArray("teleports_to") instance=ExtResource("1_tbxrj")]
-gravity_g = 1.0
-teleports_to = NodePath("../GravityHole2")
+[node name="WhiteHole" parent="." instance=ExtResource("2_2oyve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37336, 0, 0)
 
-[node name="GravityHole2" parent="." instance=ExtResource("1_tbxrj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2383, 0, 0)
+[node name="BlackHole" parent="." node_paths=PackedStringArray("teleports_to") instance=ExtResource("3_2ukf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4541, 0, 0)
+teleports_to = NodePath("../WhiteHole")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
