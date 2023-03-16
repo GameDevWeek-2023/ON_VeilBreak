@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2mi84frdx555"]
+[gd_scene load_steps=6 format=3 uid="uid://d2mi84frdx555"]
 
 [ext_resource type="Script" path="res://objects/gravity_hole.gd" id="1_wp6l2"]
 
@@ -10,7 +10,9 @@ albedo_color = Color(1, 0, 1, 1)
 material = SubResource("StandardMaterial3D_v226p")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ulyn"]
-radius = 20.0
+radius = 10.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8vqxp"]
 
 [node name="GravityHole" type="Node3D"]
 script = ExtResource("1_wp6l2")
@@ -19,12 +21,19 @@ script = ExtResource("1_wp6l2")
 mesh = SubResource("SphereMesh_khu36")
 skeleton = NodePath("../..")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="gravity_area" type="Area3D" parent="."]
 gravity_space_override = 3
 gravity_point = true
 gravity_point_unit_distance = 1.0
 gravity_point_center = Vector3(0, 0, 0)
 gravity_direction = Vector3(0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravity_area"]
 shape = SubResource("SphereShape3D_8ulyn")
+
+[node name="event_horizon" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="event_horizon"]
+shape = SubResource("SphereShape3D_8vqxp")
+
+[connection signal="body_entered" from="event_horizon" to="." method="_on_event_horizon_body_entered"]
