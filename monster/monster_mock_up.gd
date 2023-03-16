@@ -4,3 +4,13 @@ extends RigidBody3D
 
 func on_death():
 	get_parent().victory()
+
+
+
+func get_health() -> int:
+	return $health.current;
+
+
+
+func get_max_health() -> int:
+	return $health.max;

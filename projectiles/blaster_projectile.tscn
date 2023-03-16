@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6454h30kwl8u"]
+
+[ext_resource type="PackedScene" uid="uid://ca46gn7c2m51u" path="res://projectiles/projectile.tscn" id="1_02gkh"]
+[ext_resource type="PackedScene" uid="uid://dgigrr45bnbok" path="res://particles/thruster_exhaust.tscn" id="2_ea1bi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpveh"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(0.0352941, 1, 1, 0.403922)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tpilv"]
+material = SubResource("StandardMaterial3D_lpveh")
+top_radius = 0.125
+bottom_radius = 0.065
+
+[node name="Projectile2" instance=ExtResource("1_02gkh")]
+speed = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-5.73206e-15, -1.31134e-07, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, 1.31134e-07, 0, 0, 0)
+mesh = SubResource("CylinderMesh_tpilv")
+
+[node name="thruster_exhaust" parent="MeshInstance3D" index="0" instance=ExtResource("2_ea1bi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.37114e-08, 1, -1.31134e-07)

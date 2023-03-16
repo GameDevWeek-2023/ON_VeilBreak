@@ -1,6 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd5csogdrrvk0"]
+[gd_scene load_steps=11 format=3 uid="uid://cd5csogdrrvk0"]
 
 [ext_resource type="PackedScene" uid="uid://ca46gn7c2m51u" path="res://projectiles/projectile.tscn" id="1_ld5yn"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4r8jb"]
+transparency = 1
+blend_mode = 3
+shading_mode = 0
+albedo_color = Color(0.72549, 0, 0.866667, 0.654902)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6qf4s"]
+material = SubResource("StandardMaterial3D_4r8jb")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="Gradient" id="Gradient_crd87"]
+colors = PackedColorArray(0.437485, 0.00233078, 0.766133, 1, 1, 0, 1, 0.305882)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8anme"]
+gradient = SubResource("Gradient_crd87")
+
+[sub_resource type="Curve" id="Curve_cou0c"]
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.3216, 1.3865), 0.0, 0.0, 0, 0, Vector2(0.568, 0.711656), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_i8qu1"]
+curve = SubResource("Curve_cou0c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d7v2l"]
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.5
+scale_curve = SubResource("CurveTexture_i8qu1")
+color_ramp = SubResource("GradientTexture1D_8anme")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrl8g"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_ttk8i"]
+material = SubResource("StandardMaterial3D_jrl8g")
+radius = 0.1
+height = 0.2
+
 [node name="Projectile" instance=ExtResource("1_ld5yn")]
 speed = 20.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("SphereMesh_6qf4s")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
+amount = 16
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_d7v2l")
+draw_pass_1 = SubResource("SphereMesh_ttk8i")

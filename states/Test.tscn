@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddey1vdm72qan"]
+[gd_scene load_steps=15 format=3 uid="uid://ddey1vdm72qan"]
 
 [ext_resource type="Script" path="res://states/Test.gd" id="1_b3l7m"]
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="2_ak5r5"]
+[ext_resource type="PackedScene" uid="uid://cfle2ry1piatw" path="res://ui/HUD.tscn" id="2_pqhnj"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="3_r0g3r"]
 [ext_resource type="PackedScene" uid="uid://bjwci3vo6ej5y" path="res://Target.tscn" id="4_unjqi"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="5_m33c8"]
@@ -25,6 +26,10 @@ size = Vector3(60, 2, 60)
 
 [node name="Test" type="Node3D"]
 script = ExtResource("1_b3l7m")
+
+[node name="HUD" parent="." node_paths=PackedStringArray("player", "enemy") instance=ExtResource("2_pqhnj")]
+player = NodePath("../Player")
+enemy = NodePath("../MonsterMockUp")
 
 [node name="Player" parent="." instance=ExtResource("2_ak5r5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0602422, 2.77691, 15.7307)
@@ -76,6 +81,6 @@ transform = Transform3D(0.999997, 0.00223683, -0.000380262, -0.00223683, 0.99999
 transform = Transform3D(1, -7.44799e-12, 0, -5.55217e-12, 1, 2.27374e-13, 0, 2.27374e-13, 1, -12, -7.45058e-09, 0)
 mesh = SubResource("BoxMesh_tap4f")
 
-[node name="MonsterMochUp" parent="." instance=ExtResource("7_p1nnf")]
+[node name="MonsterMockUp" parent="." instance=ExtResource("7_p1nnf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1184, 10, -33.4691)
 gravity_scale = 0.0

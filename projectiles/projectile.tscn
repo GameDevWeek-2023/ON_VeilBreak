@@ -1,21 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca46gn7c2m51u"]
+[gd_scene load_steps=3 format=3 uid="uid://ca46gn7c2m51u"]
 
 [ext_resource type="Script" path="res://projectiles/projectile.gd" id="1_vhj26"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_wf7s0"]
-radius = 0.1
-height = 0.2
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_saea3"]
 
-[node name="Projectile" type="Area3D"]
+[node name="Projectile2" type="Area3D"]
 collision_layer = 256
 collision_mask = 256
 script = ExtResource("1_vhj26")
-
-[node name="model" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_wf7s0")
-skeleton = NodePath("")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
