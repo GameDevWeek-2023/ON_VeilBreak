@@ -15,6 +15,7 @@ script = ExtResource("1_cbi1g")
 team = 1
 
 [node name="health" parent="." instance=ExtResource("1_lbat8")]
+max = 10
 
 [node name="shootable" parent="." instance=ExtResource("1_k38ra")]
 
