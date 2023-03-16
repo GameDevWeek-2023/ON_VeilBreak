@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://dvfjmy3qnb0v3"]
 
-[ext_resource type="PackedScene" uid="uid://copp5gxexhi85" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
+[ext_resource type="PackedScene" uid="uid://dfihqbapo6i5x" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_lsee7"]
-[ext_resource type="PackedScene" uid="uid://cpws260t447t5" path="res://player/player_camara.tscn" id="2_et1dp"]
+[ext_resource type="PackedScene" uid="uid://2o2qqoeya0t7" path="res://player/player_camara.tscn" id="2_et1dp"]
 [ext_resource type="PackedScene" uid="uid://rtm3dqafifby" path="res://player/movement.tscn" id="2_v5qm3"]
 [ext_resource type="Script" path="res://player/WeaponSlot.gd" id="4_pgwje"]
 [ext_resource type="PackedScene" uid="uid://b6454h30kwl8u" path="res://projectiles/blaster_projectile.tscn" id="6_8kg7y"]
 [ext_resource type="PackedScene" uid="uid://b7oa04tr8m2hc" path="res://objects/components/air_resisitance.tscn" id="6_at7qr"]
-[ext_resource type="PackedScene" path="res://models/robot_animated.tscn" id="9_4bmx0"]
+[ext_resource type="PackedScene" uid="uid://dqtbedbjbx5vu" path="res://models/robot_animated.tscn" id="9_4bmx0"]
 [ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="9_d6e58"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="10_o4aej"]
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp72n07r3b4h4"]
+[gd_scene load_steps=7 format=3 uid="uid://xsgfb4u1pxs1"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_6bpxl"]
 [ext_resource type="Script" path="res://objects/PhysicsController.gd" id="1_uv5o2"]
-[ext_resource type="PackedScene" uid="uid://4khjakna7utn" path="res://objects/white_hole.tscn" id="2_2oyve"]
-[ext_resource type="PackedScene" uid="uid://2m4b7kjn8b5i" path="res://objects/black_hole.tscn" id="3_2ukf8"]
+[ext_resource type="PackedScene" uid="uid://cet7avrdfvoks" path="res://objects/white_hole.tscn" id="2_2oyve"]
+[ext_resource type="PackedScene" uid="uid://oa2ukqp262bv" path="res://objects/black_hole.tscn" id="3_2ukf8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_chs8t"]
 
