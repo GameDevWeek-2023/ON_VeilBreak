@@ -4,7 +4,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_saea3"]
 
-[node name="Projectile" type="Area3D"]
+[node name="Projectile2" type="Area3D"]
 collision_layer = 256
 collision_mask = 256
 script = ExtResource("1_vhj26")
