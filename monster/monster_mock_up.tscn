@@ -10,8 +10,9 @@
 radius = 2.0
 height = 4.0
 
-[node name="MonsterMochUp" type="RigidBody3D"]
+[node name="MonsterMockUp" type="RigidBody3D"]
 script = ExtResource("1_cbi1g")
+team = 1
 
 [node name="health" parent="." instance=ExtResource("1_lbat8")]
 
