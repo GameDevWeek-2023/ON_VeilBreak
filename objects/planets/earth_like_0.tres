@@ -11,7 +11,7 @@ noise = SubResource("FastNoiseLite_8jn46")
 [resource]
 render_priority = 0
 shader = ExtResource("1_oh01j")
-shader_parameter/height_scale = 0.1
+shader_parameter/height_scale = 3.0
 shader_parameter/terrain_scale = 1.0
 shader_parameter/height_map = SubResource("NoiseTexture2D_2pt5r")
 shader_parameter/terran_color = ExtResource("2_ymvrm")

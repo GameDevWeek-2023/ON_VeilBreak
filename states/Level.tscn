@@ -32,7 +32,7 @@ environment = SubResource("Environment_8lbag")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 
 [node name="Planet" parent="." instance=ExtResource("4_ftxkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1021, 1642.2, -31.9)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1021, 1642.2, -31.9)
 
 [node name="Planet2" parent="." instance=ExtResource("3_1a47j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 624.865, 1688.8, 62.8)

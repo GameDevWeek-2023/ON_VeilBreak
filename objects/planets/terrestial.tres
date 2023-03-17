@@ -4,7 +4,7 @@
 code = "shader_type spatial;
 
 uniform sampler2D height_map;
-uniform float height_scale = 10.0;
+uniform float height_scale = 1.0;
 uniform float terrain_scale = 1.0;
 uniform sampler2D terran_color;
 
@@ -12,14 +12,13 @@ varying float height;
 
 
 float sample_height(vec2 point) {
-//	vec2 sample_point = point.xy + point.xz + point.zy;
 	return 1.0 - texture(height_map, point / terrain_scale).r;
 }
 
 
 void vertex() {
 	height = sample_height(UV);
-	VERTEX -= NORMAL * height * height_scale;
+	VERTEX -= NORMAL * height * height_scale / 100.0;
 }
 
 
