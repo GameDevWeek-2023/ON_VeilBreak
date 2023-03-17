@@ -1,18 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsel3nr20bs1x"]
+[gd_scene load_steps=14 format=3 uid="uid://dsel3nr20bs1x"]
 
 [ext_resource type="Script" path="res://states/Level.gd" id="1_1oxwb"]
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_4gusc"]
 [ext_resource type="PackedScene" uid="uid://cfle2ry1piatw" path="res://ui/HUD.tscn" id="1_besux"]
-[ext_resource type="Material" uid="uid://bfup8w2i6cc50" path="res://states/Sky.tres" id="2_cy1dx"]
 [ext_resource type="PackedScene" uid="uid://dtmyvxywewlom" path="res://objects/planets/earth_like_0.tscn" id="3_1a47j"]
+[ext_resource type="Shader" path="res://states/Black.gdshader" id="4_8o615"]
 [ext_resource type="PackedScene" uid="uid://d0iw7xwkgg07l" path="res://objects/planets/lunar_0.tscn" id="4_ftxkr"]
 [ext_resource type="PackedScene" uid="uid://cttk3iygibdo0" path="res://objects/planets/martian_0.tscn" id="5_fcvk6"]
 [ext_resource type="PackedScene" uid="uid://burcihbh3hjav" path="res://monster/Monster.tscn" id="7_i10my"]
 [ext_resource type="PackedScene" path="res://objects/black_hole.tscn" id="9_d4ojl"]
 [ext_resource type="PackedScene" path="res://objects/white_hole.tscn" id="10_vlljl"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlxm4"]
+shader = ExtResource("4_8o615")
+
 [sub_resource type="Sky" id="Sky_en2hj"]
-sky_material = ExtResource("2_cy1dx")
+sky_material = SubResource("ShaderMaterial_hlxm4")
 
 [sub_resource type="Environment" id="Environment_8lbag"]
 background_mode = 2
