@@ -11,15 +11,14 @@ uniform sampler2D terran_color;
 varying float height;
 
 
-float sample_height(vec3 point) {
-	vec2 sample_point = point.xy + point.xz + point.yz;
-	return 1.0 - texture(height_map, sample_point / terrain_scale).r;
+float sample_height(vec2 point) {
+//	vec2 sample_point = point.xy + point.xz + point.zy;
+	return 1.0 - texture(height_map, point / terrain_scale).r;
 }
 
 
 void vertex() {
-	height = sample_height(VERTEX);
-	float height_e = sample_height(VERTEX);
+	height = sample_height(UV);
 	VERTEX -= NORMAL * height * height_scale;
 }
 
@@ -45,6 +44,6 @@ gradient = SubResource("Gradient_hq8bo")
 render_priority = 0
 shader = SubResource("Shader_m4u4o")
 shader_parameter/height_scale = 30.0
-shader_parameter/terrain_scale = 3000.0
+shader_parameter/terrain_scale = 1.0
 shader_parameter/height_map = SubResource("NoiseTexture2D_2pt5r")
 shader_parameter/terran_color = SubResource("GradientTexture1D_2i3j0")

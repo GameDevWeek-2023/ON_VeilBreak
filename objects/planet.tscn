@@ -10,8 +10,8 @@ radius = 500.0
 material = ExtResource("2_wcssl")
 radius = 500.0
 height = 1000.0
-radial_segments = 128
-rings = 64
+radial_segments = 256
+rings = 128
 
 [node name="Planet" type="StaticBody3D"]
 
