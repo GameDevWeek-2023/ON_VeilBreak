@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://byajtjmo2ft4s"]
+[gd_scene load_steps=13 format=3 uid="uid://byajtjmo2ft4s"]
 
 [ext_resource type="Script" path="res://states/Level.gd" id="1_1oxwb"]
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_4gusc"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d0iw7xwkgg07l" path="res://objects/planets/lunar_0.tscn" id="4_ftxkr"]
 [ext_resource type="PackedScene" uid="uid://cttk3iygibdo0" path="res://objects/planets/martian_0.tscn" id="5_fcvk6"]
 [ext_resource type="PackedScene" uid="uid://bnkslg5w8tbte" path="res://monster/Monster.tscn" id="7_i10my"]
+[ext_resource type="PackedScene" uid="uid://oa2ukqp262bv" path="res://objects/black_hole.tscn" id="9_d4ojl"]
+[ext_resource type="PackedScene" uid="uid://cet7avrdfvoks" path="res://objects/white_hole.tscn" id="10_vlljl"]
 
 [sub_resource type="Sky" id="Sky_en2hj"]
 sky_material = ExtResource("2_cy1dx")
@@ -51,3 +53,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -637.494, 1731, -1550.07)
 
 [node name="Monster_0" parent="." instance=ExtResource("7_i10my")]
 transform = Transform3D(23.1312, 0, 0, 0, 23.1312, 0, 0, 0, 23.1312, 28.5689, 0, -62.795)
+
+[node name="BlackHole" parent="." node_paths=PackedStringArray("teleports_to") instance=ExtResource("9_d4ojl")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 289.814, 80.3795, 245.98)
+teleports_to = NodePath("../WhiteHole")
+
+[node name="WhiteHole" parent="." instance=ExtResource("10_vlljl")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -269.385, 0, -130.741)
