@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://byajtjmo2ft4s"]
+[gd_scene load_steps=8 format=3 uid="uid://byajtjmo2ft4s"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_4gusc"]
-[ext_resource type="PackedScene" uid="uid://che2bwi0vua7j" path="res://objects/planet.tscn" id="1_55041"]
 [ext_resource type="Material" uid="uid://cq56y0lf6m4xi" path="res://states/Sky.tres" id="2_cy1dx"]
+[ext_resource type="PackedScene" uid="uid://dtmyvxywewlom" path="res://objects/planets/earth_like_0.tscn" id="3_1a47j"]
+[ext_resource type="PackedScene" uid="uid://d0iw7xwkgg07l" path="res://objects/planets/lunar_0.tscn" id="4_ftxkr"]
+[ext_resource type="PackedScene" uid="uid://cttk3iygibdo0" path="res://objects/planets/martian_0.tscn" id="5_fcvk6"]
 
 [sub_resource type="Sky" id="Sky_en2hj"]
 sky_material = ExtResource("2_cy1dx")
@@ -26,11 +28,15 @@ transform = Transform3D(0.96803, 0.0882834, -0.234786, 0.161234, 0.49803, 0.8520
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8lbag")
 
-[node name="Planet" parent="." instance=ExtResource("1_55041")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 367.114, -37.9, -730.5)
+[node name="Node3D" type="Node3D" parent="."]
 
-[node name="Planet3" parent="." instance=ExtResource("1_55041")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1340.42, 343.78, 118.097)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 
-[node name="Planet2" parent="." instance=ExtResource("1_55041")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1344.3, 781.6, 898.139)
+[node name="Planet" parent="." instance=ExtResource("4_ftxkr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1021, 484.903, -31.9)
+
+[node name="Planet2" parent="." instance=ExtResource("3_1a47j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1612.24, -198.561, 62.8)
+
+[node name="Planet3" parent="." instance=ExtResource("5_fcvk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -637.494, 1731, -1550.07)
