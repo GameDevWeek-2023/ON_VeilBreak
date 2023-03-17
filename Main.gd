@@ -3,7 +3,7 @@ extends Node3D
 
 
 func _ready():
-	self._set_scene(load("res://states/Test.tscn"));
+	self._set_scene(load("res://states/Level.tscn"));
 
 
 
