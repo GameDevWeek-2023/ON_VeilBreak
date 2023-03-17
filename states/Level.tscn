@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtmyvxywewlom" path="res://objects/planets/earth_like_0.tscn" id="3_1a47j"]
 [ext_resource type="PackedScene" uid="uid://d0iw7xwkgg07l" path="res://objects/planets/lunar_0.tscn" id="4_ftxkr"]
 [ext_resource type="PackedScene" uid="uid://cttk3iygibdo0" path="res://objects/planets/martian_0.tscn" id="5_fcvk6"]
-[ext_resource type="PackedScene" path="res://monster/Monster.tscn" id="7_i10my"]
+[ext_resource type="PackedScene" uid="uid://burcihbh3hjav" path="res://monster/Monster.tscn" id="7_i10my"]
 [ext_resource type="PackedScene" path="res://objects/black_hole.tscn" id="9_d4ojl"]
 [ext_resource type="PackedScene" path="res://objects/white_hole.tscn" id="10_vlljl"]
 

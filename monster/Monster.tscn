@@ -1,13 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnkslg5w8tbte"]
+[gd_scene load_steps=12 format=3 uid="uid://burcihbh3hjav"]
 
 [ext_resource type="Script" path="res://monster/Monster.gd" id="1_bnd4y"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_tsck1"]
 [ext_resource type="PackedScene" uid="uid://d01xfcsg1pv3c" path="res://monster/magic_turret.tscn" id="2_5qqng"]
 [ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="2_7rfw7"]
-[ext_resource type="PackedScene" uid="uid://c0ikb7qn8ovhi" path="res://monster/PulseWave.tscn" id="3_ou2hg"]
+[ext_resource type="PackedScene" path="res://monster/PulseWave.tscn" id="3_ou2hg"]
 [ext_resource type="Script" path="res://monster/AI.gd" id="4_7fnsn"]
+[ext_resource type="PackedScene" uid="uid://do30hdv4gv5qw" path="res://models/monster_animated.tscn" id="7_aklhf"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jd7sm"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf5ga"]
+radius = 1.5
+height = 8.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ft2yg"]
+radius = 1.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i0o8b"]
+radius = 1.0
+height = 5.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_73una"]
 
@@ -20,14 +30,54 @@ wave = ExtResource("3_ou2hg")
 
 [node name="shootable" parent="." instance=ExtResource("1_tsck1")]
 
+[node name="torso" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(1, 0, 0, 0, 0.990326, 0.138758, 0, -0.138758, 0.990326, 0, 3.67058, -2.25204)
+shape = SubResource("CapsuleShape3D_bf5ga")
+
+[node name="head" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0163403, 8.22753, -3.02654)
+shape = SubResource("SphereShape3D_ft2yg")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shootable"]
-shape = SubResource("SphereShape3D_jd7sm")
+transform = Transform3D(0.577263, -0.676422, -0.457406, 0.775713, 0.629222, 0.0484709, 0.255023, -0.382796, 0.887936, 2.5653, 0, 0.398954)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(0.610959, -0.767998, 0.192115, 0.775713, 0.629222, 0.0484709, -0.158109, 0.119412, 0.980175, 3.30085, 0, -2.00724)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(0.349394, -0.485879, 0.801153, 0.788, 0.614977, 0.02931, -0.506932, 0.621067, 0.597742, 2.268, -0.00858307, -4.25907)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(-0.566045, 0.660252, 0.49362, 0.775642, 0.629375, 0.0476123, -0.279236, 0.409823, -0.868374, -2.38998, -0.00211901, -4.49435)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(-0.733584, -0.0101131, -0.679523, 0.559715, 0.558122, -0.61255, 0.385452, -0.829697, -0.403768, -0.076028, -0.179277, 1.07834)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(-0.0866687, 0.0314825, 0.99574, 0.775642, 0.629375, 0.0476123, -0.625195, 0.776464, -0.0789664, 0.141182, -0.00211901, -4.49435)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(-0.616737, 0.772444, -0.151549, 0.775997, 0.628931, 0.0476961, 0.132157, -0.0881859, -0.987299, -3.22405, 8.25621e-05, -2.12051)
+shape = SubResource("CapsuleShape3D_i0o8b")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(-0.330058, 0.462595, -0.822841, 0.788523, 0.614318, 0.0290724, 0.518934, -0.639234, -0.567528, -2.59403, 0.00203644, 0.453488)
+shape = SubResource("CapsuleShape3D_i0o8b")
 
 [node name="health" parent="." instance=ExtResource("2_7rfw7")]
 max = 100
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_73una")
 
 [node name="ai" type="Node" parent="."]
 script = ExtResource("4_7fnsn")
+
+[node name="monster" parent="." instance=ExtResource("7_aklhf")]
