@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c5y7u58w4yy7b"
-path="res://.godot/imported/COMET.blend-ab2b23c6dfef8b1d103bf6aa61d3d6d9.scn"
+uid="uid://fcbtd2453ybh"
+path="res://.godot/imported/comet.blend-29ba4764b42aa4e65c4272687fc16210.scn"
 
 [deps]
 
-source_file="res://models/COMET.blend"
-dest_files=["res://.godot/imported/COMET.blend-ab2b23c6dfef8b1d103bf6aa61d3d6d9.scn"]
+source_file="res://models/comet.blend"
+dest_files=["res://.godot/imported/comet.blend-29ba4764b42aa4e65c4272687fc16210.scn"]
 
 [params]
 
