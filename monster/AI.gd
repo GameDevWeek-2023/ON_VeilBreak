@@ -44,7 +44,7 @@ class SpawnTurrets:
 		monster.spawn_turrets()
 				
 	func process(delta : float):
-		return Idle.new(5.0)
+		return Idle.new(2.0)
 		
 		
 		
@@ -57,12 +57,12 @@ class PulseWave:
 		monster.pulse_wave()
 	
 	func process(delta : float):
-		return Idle.new(5.0)
+		return Idle.new(2.0)
 
 
 
 @onready var monster : Node3D = self.get_parent();
-@onready var state = Idle.new(5.0);
+@onready var state = Idle.new(2.0);
 
 
 
