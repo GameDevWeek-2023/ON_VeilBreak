@@ -29,7 +29,7 @@ func _set_end_angle(value : float):
 	
 func _set_pointer_angle(value : float):
 	pointer_angle = value;
-	$pointer.rotation = value;
+	$pointer.rotation = deg_to_rad(value);
 	
 	
 	
