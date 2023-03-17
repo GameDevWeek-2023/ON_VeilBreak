@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0iw7xwkgg07l"]
+
+[ext_resource type="PackedScene" uid="uid://csxu6xj534xnt" path="res://objects/planets/planet.tscn" id="1_wcdo0"]
+[ext_resource type="Material" uid="uid://df4120twm08kr" path="res://objects/planets/lunar_0.tres" id="2_hu7xm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mycma"]
+material = ExtResource("2_hu7xm")
+
+[node name="Planet" instance=ExtResource("1_wcdo0")]
+
+[node name="MeshInstance3D" parent="." index="2"]
+mesh = SubResource("SphereMesh_mycma")

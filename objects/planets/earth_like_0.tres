@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://0ph3pgwgcf2s"]
+
+[ext_resource type="Shader" uid="uid://cs41u6f3uyadq" path="res://objects/planets/terrestial.tres" id="1_oh01j"]
+[ext_resource type="Texture2D" uid="uid://nwfx6fyanx3y" path="res://objects/planets/earth_like_0.png" id="2_ymvrm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8jn46"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2pt5r"]
+noise = SubResource("FastNoiseLite_8jn46")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_oh01j")
+shader_parameter/height_scale = 0.1
+shader_parameter/terrain_scale = 1.0
+shader_parameter/height_map = SubResource("NoiseTexture2D_2pt5r")
+shader_parameter/terran_color = ExtResource("2_ymvrm")

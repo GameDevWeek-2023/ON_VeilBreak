@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://byajtjmo2ft4s"]
+[gd_scene load_steps=7 format=3 uid="uid://byajtjmo2ft4s"]
 
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_4gusc"]
 [ext_resource type="Material" uid="uid://cq56y0lf6m4xi" path="res://states/Sky.tres" id="2_cy1dx"]
-[ext_resource type="PackedScene" uid="uid://bjdgtfndwetrr" path="res://objects/planet.tscn" id="3_yytfr"]
+[ext_resource type="PackedScene" uid="uid://dtmyvxywewlom" path="res://objects/planets/earth_like_0.tscn" id="3_1a47j"]
+[ext_resource type="PackedScene" uid="uid://d0iw7xwkgg07l" path="res://objects/planets/lunar_0.tscn" id="4_ftxkr"]
 
 [sub_resource type="Sky" id="Sky_en2hj"]
 sky_material = ExtResource("2_cy1dx")
@@ -30,5 +31,8 @@ environment = SubResource("Environment_8lbag")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 
-[node name="Planet" parent="." instance=ExtResource("3_yytfr")]
-transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 533.248, 0, 1066.47)
+[node name="Planet" parent="." instance=ExtResource("4_ftxkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1021, 1642.2, -31.9)
+
+[node name="Planet2" parent="." instance=ExtResource("3_1a47j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 624.865, 1688.8, 62.8)
