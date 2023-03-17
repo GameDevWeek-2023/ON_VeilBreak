@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cpf6ppps7epci"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cpf6ppps7epci"]
 
 [sub_resource type="Shader" id="Shader_m4u4o"]
 code = "shader_type spatial;
@@ -6,21 +6,45 @@ code = "shader_type spatial;
 uniform sampler2D height_map;
 uniform float height_scale = 10.0;
 uniform float terrain_scale = 1.0;
+uniform sampler2D terran_color;
+
+varying float height;
+
+
+float sample_height(vec3 point) {
+	vec2 sample_point = point.xy + point.xz + point.yz;
+	return 1.0 - texture(height_map, sample_point / terrain_scale).r;
+}
+
 
 void vertex() {
-	vec2 sample_point = NORMAL.xy + NORMAL.xz + NORMAL.yz; 
-	VERTEX -= NORMAL * texture(height_map, sample_point / terrain_scale).r * height_scale;
+	height = sample_height(VERTEX);
+	float height_e = sample_height(VERTEX);
+	VERTEX -= NORMAL * height * height_scale;
 }
-"
+
+
+
+void fragment() {
+	ALBEDO = texture(terran_color, vec2(1.0 - height, 0)).rgb;
+}"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8jn46"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2pt5r"]
 noise = SubResource("FastNoiseLite_8jn46")
 
+[sub_resource type="Gradient" id="Gradient_hq8bo"]
+offsets = PackedFloat32Array(0, 0.114467, 0.36407, 0.470588, 0.508744, 0.513514, 0.688394, 0.744038, 0.842607)
+colors = PackedColorArray(0, 0.235294, 1, 1, 0, 0.276058, 0.887625, 1, 0, 0.282852, 0.868896, 1, 0, 0.376268, 0.611369, 1, 1, 0.783441, 0.493802, 1, 0.245, 0.5, 0.2535, 1, 0.0896, 0.32, 0.22784, 1, 0.43, 0.43, 0.43, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2i3j0"]
+gradient = SubResource("Gradient_hq8bo")
+
 [resource]
 render_priority = 0
 shader = SubResource("Shader_m4u4o")
 shader_parameter/height_scale = 30.0
-shader_parameter/terrain_scale = 5.0
+shader_parameter/terrain_scale = 3000.0
 shader_parameter/height_map = SubResource("NoiseTexture2D_2pt5r")
+shader_parameter/terran_color = SubResource("GradientTexture1D_2i3j0")
