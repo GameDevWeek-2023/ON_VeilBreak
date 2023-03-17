@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cpf6ppps7epci"]
+
+[sub_resource type="Shader" id="Shader_m4u4o"]
+code = "shader_type spatial;
+
+uniform sampler2D height_map;
+uniform float height_scale = 10.0;
+uniform float terrain_scale = 1.0;
+
+void vertex() {
+	vec2 sample_point = NORMAL.xy + NORMAL.xz + NORMAL.yz; 
+	VERTEX -= NORMAL * texture(height_map, sample_point / terrain_scale).r * height_scale;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8jn46"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2pt5r"]
+noise = SubResource("FastNoiseLite_8jn46")
+
+[resource]
+render_priority = 0
+shader = SubResource("Shader_m4u4o")
+shader_parameter/height_scale = 30.0
+shader_parameter/terrain_scale = 5.0
+shader_parameter/height_map = SubResource("NoiseTexture2D_2pt5r")

@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://che2bwi0vua7j"]
+[gd_scene load_steps=5 format=3 uid="uid://bjdgtfndwetrr"]
 
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_db8da"]
+[ext_resource type="Material" uid="uid://cpf6ppps7epci" path="res://objects/planet_terrain/earth_like_0.tres" id="2_wcssl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wv80c"]
 radius = 500.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_d1yui"]
+material = ExtResource("2_wcssl")
 radius = 500.0
 height = 1000.0
+radial_segments = 128
+rings = 64
 
 [node name="Planet" type="StaticBody3D"]
 
