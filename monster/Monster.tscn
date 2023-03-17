@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnkslg5w8tbte"]
+[gd_scene load_steps=7 format=3 uid="uid://bnkslg5w8tbte"]
 
 [ext_resource type="Script" path="res://monster/Monster.gd" id="1_bnd4y"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_tsck1"]
 [ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="2_7rfw7"]
+[ext_resource type="Script" path="res://monster/AI.gd" id="4_7fnsn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jd7sm"]
 
@@ -21,3 +22,6 @@ max = 100
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_73una")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("4_7fnsn")
