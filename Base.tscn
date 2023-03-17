@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="2_xcpkc"]
 [ext_resource type="PackedScene" uid="uid://dtq15flv2kf7n" path="res://objects/space_object.tscn" id="3_74f73"]
 [ext_resource type="PackedScene" uid="uid://b54aqylhapun0" path="res://objects/magic_turret.tscn" id="4_xnmqo"]
-[ext_resource type="PackedScene" uid="uid://blh0vgq0vf1ht" path="res://Hologram.tscn" id="6_a06u5"]
+[ext_resource type="PackedScene" path="res://Hologram.tscn" id="6_a06u5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2d17"]
 size = Vector3(60, 2, 60)

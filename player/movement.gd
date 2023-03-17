@@ -1,6 +1,9 @@
 extends Node3D
 
 @onready var parent : CharacterBody3D = get_parent();
+@onready var camara : SpringArm3D = parent.find_child("player_camara");
+@onready var default_camara_pos = camara.spring_length;
+@onready var boosted_camara_pos = default_camara_pos + 3;
 
 @export var mouse_sensitivity := 2.0
 @export var base_speed := 50;
@@ -44,24 +47,28 @@ func boost(delta: float) -> void:
 			boost_active = true;
 			boost_timer = boost_cd;
 			boost_return_timer = boost_exit_timing;
-			target_boost_speed = min((current_speed + to_add_boost_speed), max_speed)		
+			target_boost_speed = min((current_speed + to_add_boost_speed), max_speed)
+			camara.interpolate(camara.spring_length, boosted_camara_pos, camara.boost_camara_curve, 0.6);
 			
 	if (boost_timer > 0.0):
 		boost_t = boost_enter_curve.sample((boost_cd - boost_timer)/boost_cd);
 		boost_timer -= delta;
+
 		if (boost_timer <= 0.0):
+			camara.interpolate(camara.spring_length, default_camara_pos, camara.exit_boost_camara_curve, 1);
 			boost_timer = 0;
 		return;
 		
 	elif(boost_return_timer > 0.0):
 		boost_t = boost_enter_curve.sample((boost_exit_timing - boost_return_timer)/boost_exit_timing);
 		boost_return_timer -= delta;
-		print(boost_return_timer)
+#		print(boost_return_timer)
 		if (boost_return_timer <= 0.0):
 			boost_return_timer = 0;
 			boost_active = false;
 		return
 
+	
 		
 
 func speed_calc(delta: float) -> void:
@@ -97,7 +104,7 @@ func _physics_process(delta : float):
 	
 	
 	parent.velocity = move_direction * current_speed;
-	print(current_speed)
+#	print(current_speed)
 	
 	var has_collided = parent.move_and_slide();
 	

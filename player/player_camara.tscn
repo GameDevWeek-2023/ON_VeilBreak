@@ -7,6 +7,6 @@ spring_length = 5.0
 script = ExtResource("1_1bm1n")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193743, -0.126409, 1.48876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194, 0, 1.489)
 current = true
 fov = 90.6
