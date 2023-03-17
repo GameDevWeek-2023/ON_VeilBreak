@@ -13,6 +13,7 @@ cooldown = 0.1
 muzzle = NodePath("muzzle")
 
 [node name="glow_orb" parent="." instance=ExtResource("3_gv48u")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="muzzle" type="Node3D" parent="."]
 
