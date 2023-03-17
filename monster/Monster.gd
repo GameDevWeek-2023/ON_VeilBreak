@@ -6,6 +6,7 @@ extends Node3D
 @export var turret_min_distance : float = 50.0
 @export var turret_max_distance : float = 100.0
 
+@export var wave : PackedScene;
 
 
 @onready var rng = RandomNumberGenerator.new();
@@ -50,4 +51,7 @@ func spawn_turrets():
 
 
 func pulse_wave():
-	print("PULSE WAVE");
+	var w : Node = wave.instantiate();
+	w.position = position;
+	w.team = self.team;
+	level.add_child(w);
