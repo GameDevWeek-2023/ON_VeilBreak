@@ -8,3 +8,7 @@ func _process(delta : float):
 	self.look_at(player.position);
 	self._do_shoot();
 	super._process(delta)
+
+
+func _on_timer_timeout():
+	self.queue_free();

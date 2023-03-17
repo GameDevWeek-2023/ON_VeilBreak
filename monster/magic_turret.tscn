@@ -15,3 +15,10 @@ muzzle = NodePath("muzzle")
 [node name="glow_orb" parent="." instance=ExtResource("3_gv48u")]
 
 [node name="muzzle" type="Node3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
