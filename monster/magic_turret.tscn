@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d01xfcsg1pv3c"]
+
+[ext_resource type="Script" path="res://monster/magic_turret.gd" id="1_6poio"]
+[ext_resource type="PackedScene" uid="uid://cd5csogdrrvk0" path="res://projectiles/magic_projectiles_1.tscn" id="2_tl8vm"]
+[ext_resource type="PackedScene" uid="uid://wp3xsxedw6i5" path="res://objects/glow_orb.tscn" id="3_gv48u"]
+
+[node name="magic_turret" type="Node3D" node_paths=PackedStringArray("user", "muzzle")]
+script = ExtResource("1_6poio")
+team = 1
+projectile = ExtResource("2_tl8vm")
+user = NodePath(".")
+cooldown = 0.1
+muzzle = NodePath("muzzle")
+
+[node name="glow_orb" parent="." instance=ExtResource("3_gv48u")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="muzzle" type="Node3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
