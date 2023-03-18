@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="1_tsck1"]
 [ext_resource type="PackedScene" uid="uid://d01xfcsg1pv3c" path="res://monster/magic_turret.tscn" id="2_5qqng"]
 [ext_resource type="PackedScene" uid="uid://i6eh64h71x3a" path="res://objects/components/health.tscn" id="2_7rfw7"]
-[ext_resource type="PackedScene" path="res://monster/PulseWave.tscn" id="3_ou2hg"]
+[ext_resource type="PackedScene" uid="uid://c5650bv5ia6cn" path="res://monster/PulseWave.tscn" id="3_ou2hg"]
 [ext_resource type="Script" path="res://monster/AI.gd" id="4_7fnsn"]
 [ext_resource type="PackedScene" uid="uid://do30hdv4gv5qw" path="res://models/monster_animated.tscn" id="7_aklhf"]
 
