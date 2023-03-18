@@ -10,3 +10,7 @@ func _ready():
 
 func _on_button_pressed():
 	main.open_main_menu();
+
+
+func _on_replay_pressed():
+	main.start_game();
