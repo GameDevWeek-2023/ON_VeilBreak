@@ -66,7 +66,7 @@ script = null
 transform = Transform3D(23.1312, 0, 0, 0, 23.1312, 0, 0, 0, 23.1312, 0, 0, 0)
 
 [node name="BlackHole" parent="." node_paths=PackedStringArray("teleports_to") instance=ExtResource("9_d4ojl")]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 289.814, 80.3795, 245.98)
+transform = Transform3D(48.2963, -12.941, 0, 11.2072, 41.8258, 25, -6.47048, -24.1481, 43.3013, 289.814, 80.3795, 245.98)
 teleports_to = NodePath("../WhiteHole")
 
 [node name="WhiteHole" parent="." instance=ExtResource("10_vlljl")]
