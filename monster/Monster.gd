@@ -40,6 +40,7 @@ func _physics_process(delta : float):
 		self.position = self.position.move_toward(self.dest_position, delta * self.move_speed)
 
 
+
 func get_health() -> int:
 	return $health.current;
 
