@@ -2,6 +2,10 @@ extends CharacterBody3D
 
 @export var team : Team.Enum = Team.Enum.NEUTRAL;
 
+@onready var level = get_parent();
+
+
+
 func on_death():
 	get_parent().gameover();
 

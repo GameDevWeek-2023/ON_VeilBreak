@@ -19,6 +19,17 @@ extends Node3D
 
 
 
+func gravity_drop_off(other_position : Vector3) -> float:
+	var r = (self.position - other_position).length(); 
+	return (10) * (r * r)
+	
+
+
+func is_gravity_inversed() -> bool:
+	return true;
+
+
+
 func _ready():
 	rng.randomize();
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cet7avrdfvoks"]
+[gd_scene load_steps=4 format=3 uid="uid://cpub7e5w82l3u"]
 
-[ext_resource type="PackedScene" uid="uid://ddm88bxk0xq4s" path="res://objects/gravity_hole.tscn" id="1_oe45m"]
+[ext_resource type="PackedScene" uid="uid://bmpcw8n8yms6i" path="res://objects/gravity_hole.tscn" id="1_oe45m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pibec"]
 shading_mode = 0

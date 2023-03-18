@@ -114,7 +114,7 @@ func speed_calc(delta: float) -> void:
 	if (boost_active):
 		current_speed = current_speed * (1 - boost_t) +  target_speed * boost_t;
 	elif(boost_return_timer > 0):
-		print("boost_t : ", boost_t, " | current_speed : ", current_speed)
+#		print("boost_t : ", boost_t, " | current_speed : ", current_speed)
 		boost_return_timer -= delta
 		boost_t = boost_exit_curve.sample((boost_exit_timing - boost_return_timer)/boost_exit_timing);
 		current_speed = current_speed * (1 - boost_t) +  base_speed * boost_t;
@@ -162,9 +162,10 @@ func _physics_process(delta : float):
 	else:
 		parent.velocity = move_direction * current_speed;
 	
-	
+	_apply_gravity();	
 	
 	var has_collided = parent.move_and_slide();
+#	print(parent.position);
 	
 	if(has_collided):
 		self._push_other_objects();
@@ -172,7 +173,20 @@ func _physics_process(delta : float):
 	self._pitch_direction = 0
 	self._yaw_direction = 0
 	
-	
+
+
+func _apply_gravity():
+	if(parent.level):
+		for obj in parent.level.get_children():
+			if(obj.has_method("get_gravity") && obj.has_method("gravity_drop_off")):
+				var vec = (obj.position - parent.position);
+				var dir = vec.normalized();
+				var force = obj.get_gravity() * obj.gravity_drop_off(parent.position) * 100;
+				if(force >= 10):
+					print(force)
+				parent.velocity += dir * force;
+				
+
 	
 func _push_other_objects():
 	for i in parent.get_slide_collision_count():
