@@ -48,7 +48,7 @@ func boost(delta: float) -> void:
 	if (boost_timer <= 0.0):
 		if (Input.is_action_pressed("boost")):
 			boost_active = true;
-			drift = true
+#			drift = true
 			if (boost_lvl < boost_lvl_max):
 					boost_timer = boost_cd;
 					target_speed = min((current_speed + to_add_boost_speed), max_speed)

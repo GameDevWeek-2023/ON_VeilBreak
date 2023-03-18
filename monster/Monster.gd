@@ -20,8 +20,15 @@ extends Node3D
 
 
 func gravity_drop_off(other_position : Vector3) -> float:
+	var free_zone_inner = 250;
+	var free_zone_outer = 1000;
+	var gravity_strength = 0.001;
 	var r = (self.position - other_position).length(); 
-	return r / 1000;
+	if(r <= free_zone_inner):
+		return -1 / (r) * gravity_strength;
+	if(r >= free_zone_outer):
+		return (r - free_zone_outer) * gravity_strength;
+	return 0
 	
 
 func get_gravity() -> float:
