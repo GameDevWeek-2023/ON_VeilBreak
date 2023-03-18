@@ -16,6 +16,7 @@ data = PackedVector3Array(-0.0882, 0, -0.8957, 0, 0.0098, -0.901, 0, 0, -0.9, -0
 
 [node name="PulseWave" type="Node3D"]
 script = ExtResource("1_1t3yr")
+expand_speed = 400.0
 
 [node name="anchor" type="Node3D" parent="."]
 
