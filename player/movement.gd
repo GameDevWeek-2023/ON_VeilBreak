@@ -48,7 +48,7 @@ func boost(delta: float) -> void:
 	if (boost_timer <= 0.0):
 		if (Input.is_action_pressed("boost")):
 			boost_active = true;
-#			drift = true
+			drift = true
 			if (boost_lvl < boost_lvl_max):
 					boost_timer = boost_cd;
 					target_speed = min((current_speed + to_add_boost_speed), max_speed)
@@ -94,7 +94,7 @@ func boost(delta: float) -> void:
 #		return
 
 	
-var drift = false;
+var drift = true;
 		
 
 func speed_calc(delta: float) -> void:
@@ -146,7 +146,7 @@ func _physics_process(delta : float):
 	elif(drift):
 		parent.velocity = last_move_direction * current_speed;
 	else:
-		parent.velocity = move_direction * current_speed;
+		parent.velocity = lerp(move_direction, last_move_direction, 0.1) * current_speed;
 	
 	_apply_gravity();	
 	

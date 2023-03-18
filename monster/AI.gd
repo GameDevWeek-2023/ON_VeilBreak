@@ -45,7 +45,7 @@ class SpawnTurrets:
 		monster.spawn_turrets()
 				
 	func process(delta : float):
-		return Idle.new(2.0)
+		return Idle.new(1.0)
 		
 		
 		
@@ -104,7 +104,7 @@ class LookAtPlayer:
 		monster.look_at_player()
 	
 	func process(delta : float):
-		return WaitThanDo.new(2.5, func(): return MoveToPlayer.new()); 
+		return WaitThanDo.new(1.5, func(): return MoveToPlayer.new()); 
 
 
 
@@ -122,12 +122,12 @@ class MoveToPlayer:
 
 
 @onready var monster : Node3D = self.get_parent();
-@onready var state = Idle.new(2.0);
+@onready var state = WaitThanDo.new(2.0, func(): return SpawnTurrets.new());
 
 
 
 func _ready():
-	pass
+	pass;
 
 
 
