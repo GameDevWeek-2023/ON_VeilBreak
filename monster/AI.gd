@@ -75,6 +75,26 @@ class FollowPlayer:
 
 
 
+class WaitThanDo:
+	var time : float = 0;
+	var action;
+
+	func _init(time : float, action):
+		print("AI state: WaitThanDo");
+		self.time = time;
+		self.action = action;
+
+	func start(executor):
+		pass
+
+	func process(delta : float):
+		self.time -= delta;
+		if(time <= 0):
+			return self.action.call()
+		else:
+			return null;
+
+
 class LookAtPlayer:
 	func _init():
 		print("AI state: LookAtPlayer");
@@ -84,7 +104,7 @@ class LookAtPlayer:
 		monster.look_at_player()
 	
 	func process(delta : float):
-		return MoveToPlayer.new()
+		return WaitThanDo.new(2.5, func(): return MoveToPlayer.new()); 
 
 
 
