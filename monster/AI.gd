@@ -59,12 +59,58 @@ class PulseWave:
 	
 	func process(delta : float):
 		return Idle.new(2.0)
-		
-		
-		
+
+
+
 class FollowPlayer:
 	func _init():
 		print("AI state: FollowPlayer");
+		pass
+	
+	func start(monster):
+		pass
+	
+	func process(delta : float):
+		return LookAtPlayer.new()
+
+
+
+class WaitThanDo:
+	var time : float = 0;
+	var action;
+
+	func _init(time : float, action):
+		print("AI state: WaitThanDo");
+		self.time = time;
+		self.action = action;
+
+	func start(executor):
+		pass
+
+	func process(delta : float):
+		self.time -= delta;
+		if(time <= 0):
+			return self.action.call()
+		else:
+			return null;
+
+
+class LookAtPlayer:
+	func _init():
+		print("AI state: LookAtPlayer");
+		pass
+	
+	func start(monster):
+		monster.look_at_player()
+	
+	func process(delta : float):
+		return WaitThanDo.new(2.5, func(): return MoveToPlayer.new()); 
+
+
+
+class MoveToPlayer:
+	func _init():
+		print("AI state: MoveToPlayer");
 		pass
 	
 	func start(monster):
