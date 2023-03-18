@@ -1,12 +1,17 @@
 extends StaticBody3D
 
+
+@export var msg : String = "";
+
 @onready var parent : Node = get_parent();
 
 
 
-func hit(projectile):
-	
+
+func hit(projectile):	
+	print(msg, projectile.get("team"), parent.get("team"));
 	if(projectile.get("team") != parent.get("team")):
+		print(msg);
 		self._delegate_to_parent(projectile)
 		self._delegate_to_siblings(projectile)
 

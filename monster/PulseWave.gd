@@ -13,8 +13,6 @@ func _ready():
 	var player = level.get_node("Player");
 	if(player):
 		self.look_at(player.position);
-	else:
-		print("Cannot find player");
 
 
 
@@ -30,4 +28,5 @@ func _on_timer_timeout():
 
 
 func _on_hitbox_body_entered(target):
+	print("PULSE");
 	target.hit(self);

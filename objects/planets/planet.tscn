@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://csxu6xj534xnt"]
+[gd_scene load_steps=5 format=3 uid="uid://csxu6xj534xnt"]
 
+[ext_resource type="Script" path="res://objects/planets/planet.gd" id="1_vsw6x"]
 [ext_resource type="PackedScene" uid="uid://3hvsqur16ng7" path="res://objects/components/shootable.tscn" id="2_j6pn2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wv80c"]
@@ -8,6 +9,7 @@ radius = 500.0
 [sub_resource type="SphereMesh" id="SphereMesh_sb70d"]
 
 [node name="Planet" type="StaticBody3D"]
+script = ExtResource("1_vsw6x")
 
 [node name="shootable" parent="." instance=ExtResource("2_j6pn2")]
 

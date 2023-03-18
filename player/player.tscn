@@ -45,10 +45,11 @@ boost_camara_curve = SubResource("Curve_a324d")
 exit_boost_camara_curve = SubResource("Curve_ocrbm")
 
 [node name="WeaponSlot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436737, 0)
 script = ExtResource("4_pgwje")
 
 [node name="Weapon" parent="WeaponSlot" node_paths=PackedStringArray("user") instance=ExtResource("1_d0ojn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54892, 0, 1.14025)
 projectile = ExtResource("6_8kg7y")
 user = NodePath("../..")
 cooldown = 0.1
@@ -63,6 +64,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 max = 10
 
 [node name="shootable" parent="." instance=ExtResource("10_o4aej")]
+msg = "player hit"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shootable"]
+transform = Transform3D(2.3401, 0, 0, 0, 2.3401, 0, 0, 0, 2.3401, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_v1hgy")

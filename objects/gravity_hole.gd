@@ -28,7 +28,6 @@ func _ready():
 
 
 func _on_event_horizon_body_entered(body):
-	print("Body fell in")
 	if(self.teleports_to):
 		body.position = self.teleports_to.position + Vector3(5,0,0);
 

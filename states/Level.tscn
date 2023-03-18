@@ -52,12 +52,15 @@ environment = SubResource("Environment_8lbag")
 
 [node name="Planet" parent="." instance=ExtResource("4_ftxkr")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1021, 484.903, -31.9)
+script = null
 
 [node name="Planet2" parent="." instance=ExtResource("3_1a47j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1612.24, -198.561, 62.8)
+script = null
 
 [node name="Planet3" parent="." instance=ExtResource("5_fcvk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -637.494, 1731, -1550.07)
+script = null
 
 [node name="Monster_0" parent="." instance=ExtResource("7_i10my")]
 transform = Transform3D(23.1312, 0, 0, 0, 23.1312, 0, 0, 0, 23.1312, 28.5689, 0, -62.795)

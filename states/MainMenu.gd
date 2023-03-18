@@ -11,10 +11,8 @@ func _ready():
 
 func _on_start_pressed():
 	main.start_game()
-	print("start")
 
 
 
 func _on_quit_pressed():
 	main.quit()
-	print("quit")

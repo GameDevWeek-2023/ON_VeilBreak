@@ -102,7 +102,6 @@ func speed_calc(delta: float) -> void:
 	if (boost_active):
 		current_speed = current_speed * (1 - boost_t) +  target_speed * boost_t;
 	elif(boost_return_timer > 0):
-#		print("boost_t : ", boost_t, " | current_speed : ", current_speed)
 		boost_return_timer -= delta
 		boost_t = boost_exit_curve.sample((boost_exit_timing - boost_return_timer)/boost_exit_timing);
 		current_speed = current_speed * (1 - boost_t) +  base_speed * boost_t;
@@ -117,7 +116,6 @@ func toggle_drift():
 
 var last_move_direction = Vector3.ZERO;
 func _physics_process(delta : float):
-	print(current_speed)
 	var sideway = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"));
 	var forward = (Input.get_action_strength("move_back") - Input.get_action_strength("move_forward"));
 	var up = (Input.get_action_strength("move_up") - Input.get_action_strength("move_down"));
@@ -170,9 +168,6 @@ func _apply_gravity():
 				var vec = (obj.position - parent.position);
 				var dir = vec.normalized();
 				var force = obj.get_gravity() * obj.gravity_drop_off(parent.position) * 100;
-#				current_speed = max(force + current_speed, current_speed);
-				if(force >= 10):
-					print(force)
 				parent.velocity += dir * force;
 				
 

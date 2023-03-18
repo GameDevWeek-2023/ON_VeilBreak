@@ -29,6 +29,7 @@ wave = ExtResource("3_ou2hg")
 move_speed = 100.0
 
 [node name="shootable" parent="." instance=ExtResource("1_tsck1")]
+msg = "monster hit"
 
 [node name="torso" type="CollisionShape3D" parent="shootable"]
 transform = Transform3D(1, 0, 0, 0, 0.990326, 0.138758, 0, -0.138758, 0.990326, 0, 3.67058, -2.25204)
