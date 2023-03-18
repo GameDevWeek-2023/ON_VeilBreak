@@ -33,6 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 @export var boost_exit_timing : float = 15;
 @export var boost_cd : float = 3.0;
 @export var overboost_timing : float = 1.0
+@export var boost_lvl_max : int = 3;
 
 var boost_active : bool = false;
 var boost_t : float = 0.0;
@@ -46,30 +47,17 @@ var boost_lvl = 0;
 func boost(delta: float) -> void:
 	if (boost_timer <= 0.0):
 		if (Input.is_action_pressed("boost")):
-			match boost_lvl:
-				0:
-					boost_active = true;
-					drift = true
+			boost_active = true;
+			drift = true
+			if (boost_lvl < boost_lvl_max):
 					boost_timer = boost_cd;
 					target_speed = min((current_speed + to_add_boost_speed), max_speed)
-					camara.interpolate(camara.spring_length, boosted_camara_pos, camara.boost_camara_curve, 0.6);
-					Input.action_release("boost");
-					boost_lvl = 1;
-				1:
+					camara.interpolate(camara.spring_length, (boosted_camara_pos + boosted_camara_pos_length * boost_lvl), camara.boost_camara_curve, 0.6);
+#					Input.action_release("boost");
+					boost_lvl += 1;
+			else:
 					boost_timer = boost_cd;
-					target_speed = min((current_speed + to_add_boost_speed), max_speed)
-					camara.interpolate(camara.spring_length, (boosted_camara_pos + boosted_camara_pos_length), camara.boost_camara_curve, 0.6);
-					Input.action_release("boost");
-					boost_lvl = 2;
-				2: 
-					boost_timer = boost_cd;
-					target_speed = min((current_speed + to_add_boost_speed), max_speed)
-					camara.interpolate(camara.spring_length, (boosted_camara_pos + boosted_camara_pos_length + boosted_camara_pos_length), camara.boost_camara_curve, 0.6);
-					Input.action_release("boost");
-					boost_lvl = 3;
-				_:
-					boost_timer = boost_cd;
-					target_speed = min((current_speed + to_add_boost_speed), max_speed)
+					target_speed = min((current_speed), max_speed)
 			
 	if (boost_timer > 0.0):
 		boost_t = boost_enter_curve.sample((boost_cd - boost_timer)/boost_cd);
@@ -89,7 +77,7 @@ func boost(delta: float) -> void:
 			boost_return_timer = boost_exit_timing;
 			boost_t = boost_enter_curve.sample((boost_exit_timing - boost_return_timer)/boost_exit_timing);
 			boost_active = false;
-			drift = false;
+#			drift = false;
 		return
 		
 	
@@ -129,7 +117,7 @@ func toggle_drift():
 
 var last_move_direction = Vector3.ZERO;
 func _physics_process(delta : float):
-#	print(current_speed)
+	print(current_speed)
 	var sideway = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"));
 	var forward = (Input.get_action_strength("move_back") - Input.get_action_strength("move_forward"));
 	var up = (Input.get_action_strength("move_up") - Input.get_action_strength("move_down"));
@@ -182,6 +170,7 @@ func _apply_gravity():
 				var vec = (obj.position - parent.position);
 				var dir = vec.normalized();
 				var force = obj.get_gravity() * obj.gravity_drop_off(parent.position) * 100;
+				current_speed = max(force + current_speed, current_speed);
 				if(force >= 10):
 					print(force)
 				parent.velocity += dir * force;

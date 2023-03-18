@@ -12,7 +12,7 @@ point_count = 2
 
 [node name="Movement" type="Node3D"]
 script = ExtResource("1_3hurg")
-to_add_boost_speed = 200
+to_add_boost_speed = 100
 boost_enter_curve = SubResource("Curve_vhmt7")
 boost_exit_curve = SubResource("Curve_cjk68")
 boost_enter_timing = 0.5
