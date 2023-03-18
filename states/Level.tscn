@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dsel3nr20bs1x"]
+[gd_scene load_steps=20 format=3 uid="uid://dsel3nr20bs1x"]
 
 [ext_resource type="Script" path="res://states/Level.gd" id="1_1oxwb"]
 [ext_resource type="PackedScene" uid="uid://dvfjmy3qnb0v3" path="res://player/player.tscn" id="1_4gusc"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c48ikkrw4ffob" path="res://models/asteroid 3.blend" id="13_vdwr4"]
 [ext_resource type="PackedScene" uid="uid://dxqs01qa0tf07" path="res://models/ufo.blend" id="14_f6aje"]
 [ext_resource type="PackedScene" uid="uid://fcbtd2453ybh" path="res://models/comet.blend" id="15_8mk1q"]
+[ext_resource type="PackedScene" uid="uid://bcdqmfhgrdemm" path="res://models/satellite.blend" id="16_wv6rd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hlxm4"]
 shader = ExtResource("4_8o615")
@@ -370,7 +371,10 @@ transform = Transform3D(0.697517, 0.0218689, 0.716234, -0.588006, 0.588725, 0.55
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.82907, 33.0972)
 
 [node name="ufo" parent="." instance=ExtResource("14_f6aje")]
-transform = Transform3D(9.82116, 7.2856, 0, -7.2856, 9.82116, 0, 0, 0, 12.2285, -933.909, 642.213, 0)
+transform = Transform3D(23.6443, 1.9445, -26.6951, -22.1196, 21.4753, -18.0275, 15.0708, 28.4691, 15.4222, -533.944, 2023.13, -1044.02)
 
 [node name="comet" parent="." instance=ExtResource("15_8mk1q")]
 transform = Transform3D(10.1706, 0, 0, 0, 10.1706, 0, 0, 0, 10.1706, -1076.03, 774.964, 247.786)
+
+[node name="satellite" parent="." instance=ExtResource("16_wv6rd")]
+transform = Transform3D(2.45892, -2.75992, 0, 2.02592, 1.80497, 2.51022, -1.87425, -1.66984, 2.71335, -1037.77, 676.688, -82.8424)
