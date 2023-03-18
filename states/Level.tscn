@@ -38,7 +38,7 @@ player = NodePath("../Player")
 enemy = NodePath("../Monster_0")
 
 [node name="Player" parent="." instance=ExtResource("1_4gusc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.1)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -407.5)
 
 [node name="StarA" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.96803, 0.0882834, -0.234786, 0.161234, 0.49803, 0.852039, 0.192152, -0.862654, 0.467874, 0, 0, 0)
@@ -63,7 +63,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -637.494, 1731, -1550.07)
 script = null
 
 [node name="Monster_0" parent="." instance=ExtResource("7_i10my")]
-transform = Transform3D(23.1312, 0, 0, 0, 23.1312, 0, 0, 0, 23.1312, 28.5689, 0, -62.795)
+transform = Transform3D(23.1312, 0, 0, 0, 23.1312, 0, 0, 0, 23.1312, 0, 0, 0)
 
 [node name="BlackHole" parent="." node_paths=PackedStringArray("teleports_to") instance=ExtResource("9_d4ojl")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 289.814, 80.3795, 245.98)

@@ -27,6 +27,7 @@ func _on_timer_timeout():
 	self.queue_free()
 
 
+
 func _on_hitbox_body_entered(target):
 	print("PULSE");
 	target.hit(self);
