@@ -21,7 +21,7 @@ extends Node3D
 
 func gravity_drop_off(other_position : Vector3) -> float:
 	var r = (self.position - other_position).length(); 
-	return r / 1000;
+	return r / 1500;
 	
 
 func get_gravity() -> float:
