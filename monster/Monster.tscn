@@ -24,9 +24,11 @@ height = 5.0
 [node name="Monster_0" type="Node3D"]
 script = ExtResource("1_bnd4y")
 turret = ExtResource("2_5qqng")
-turret_count = 5
+turret_count = 10
 turret_min_distance = 10.0
+turret_max_distance = 500.0
 wave = ExtResource("3_ou2hg")
+move_speed = 100.0
 
 [node name="shootable" parent="." instance=ExtResource("1_tsck1")]
 

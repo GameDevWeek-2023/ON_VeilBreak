@@ -8,9 +8,15 @@ extends Node3D
 
 @export var wave : PackedScene;
 
+@export var move_speed : float = 10.0
+@export var move_margin : float = 100.0
+
 
 @onready var rng = RandomNumberGenerator.new();
 @onready var level = get_parent();
+@onready var dest_position := self.position;
+
+@onready var player : Node = level.get_node("Player")
 
 
 
@@ -18,9 +24,20 @@ func _ready():
 	rng.randomize();
 
 
+
 func on_death():
 	level.victory();
 
+
+
+func _physics_process(delta : float):
+	var distance = self.dest_position - self.position;
+	
+	if(distance.length() <= self.move_margin):
+		self.dest_position = self.position
+	else:
+		var direction = distance.normalized();
+		self.position = self.position.move_toward(self.dest_position, delta * self.move_speed)
 
 
 func get_health() -> int:
@@ -30,6 +47,14 @@ func get_health() -> int:
 
 func get_max_health() -> int:
 	return $health.max;
+	
+	
+	
+	
+func move_to_player():
+	if(player):
+		self.look_at(player.position)
+		self.dest_position = player.position;
 
 
 
