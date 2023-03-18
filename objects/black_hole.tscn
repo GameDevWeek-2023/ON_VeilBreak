@@ -10,18 +10,18 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_0nk1r"]
 material = SubResource("StandardMaterial3D_s2775")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7yk8x"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hmcal"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_au7tk"]
-noise = SubResource("FastNoiseLite_7yk8x")
+noise = SubResource("FastNoiseLite_hmcal")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xfvi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4m7lk"]
 render_priority = 0
 shader = ExtResource("2_w01xy")
 shader_parameter/disk_texture = SubResource("NoiseTexture2D_au7tk")
 
 [sub_resource type="TorusMesh" id="TorusMesh_dqp7v"]
-material = SubResource("ShaderMaterial_7xfvi")
+material = SubResource("ShaderMaterial_4m7lk")
 inner_radius = 0.54
 outer_radius = 1.261
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpub7e5w82l3u"]
+[gd_scene load_steps=9 format=3 uid="uid://cpub7e5w82l3u"]
 
 [ext_resource type="PackedScene" uid="uid://bmpcw8n8yms6i" path="res://objects/gravity_hole.tscn" id="1_oe45m"]
+[ext_resource type="Shader" path="res://objects/decretion_disk.gdshader" id="2_jwraa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pibec"]
 shading_mode = 0
@@ -8,8 +9,27 @@ shading_mode = 0
 [sub_resource type="SphereMesh" id="SphereMesh_axy5i"]
 material = SubResource("StandardMaterial3D_pibec")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7yk8x"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_goaeo"]
+noise = SubResource("FastNoiseLite_7yk8x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xfvi"]
+render_priority = 0
+shader = ExtResource("2_jwraa")
+shader_parameter/disk_texture = SubResource("NoiseTexture2D_goaeo")
+
+[sub_resource type="TorusMesh" id="TorusMesh_6kcs1"]
+material = SubResource("ShaderMaterial_7xfvi")
+inner_radius = 0.54
+outer_radius = 1.261
+
 [node name="WhiteHole" instance=ExtResource("1_oe45m")]
 gravity_g = -1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
 mesh = SubResource("SphereMesh_axy5i")
+
+[node name="disk" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_6kcs1")
