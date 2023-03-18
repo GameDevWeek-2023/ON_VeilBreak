@@ -11,7 +11,6 @@ func get_health() -> int:
 	return $health.current;
 
 
-
 func get_max_health() -> int:
 	return $health.max;
 

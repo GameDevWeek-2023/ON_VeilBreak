@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://n50d5vufhp2n"]
+
+[ext_resource type="Script" path="res://states/MainMenu.gd" id="1_4cprl"]
+[ext_resource type="PackedScene" uid="uid://dtmyvxywewlom" path="res://objects/planets/earth_like_0.tscn" id="1_j5d3y"]
+[ext_resource type="PackedScene" uid="uid://c48ikkrw4ffob" path="res://models/asteroid 3.blend" id="3_4585n"]
+[ext_resource type="PackedScene" uid="uid://d0iw7xwkgg07l" path="res://objects/planets/lunar_0.tscn" id="3_qvoa5"]
+
+[sub_resource type="Environment" id="Environment_4pv07"]
+background_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_0nnug"]
+font_size = 100
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_4cprl")
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
+environment = SubResource("Environment_4pv07")
+
+[node name="Node3D" type="Node3D" parent="Background"]
+transform = Transform3D(-0.462097, -0.683013, 0.56565, -0.612372, 0.707107, 0.353553, -0.641457, -0.183013, -0.74501, 458, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background/Node3D"]
+transform = Transform3D(1, -2.98023e-08, 1.49012e-08, -2.98023e-08, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Background/Node3D"]
+transform = Transform3D(-1, -2.98023e-08, -8.74228e-08, -2.98023e-08, 1, 5.96047e-08, 8.74228e-08, 5.96047e-08, -1, 0, 0, 0)
+light_color = Color(0.278431, 0, 0.168627, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="Background"]
+
+[node name="Moon" parent="Background" instance=ExtResource("3_qvoa5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 37.4071, 147.054, -1073.07)
+
+[node name="Planet" parent="Background" instance=ExtResource("1_j5d3y")]
+transform = Transform3D(0.965926, 0.258819, 0, -0.25, 0.933013, -0.258819, -0.0669873, 0.25, 0.965926, -469, -184, -534)
+
+[node name="asteroid 3" parent="Background" instance=ExtResource("3_4585n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -32, -79.2485)
+
+[node name="asteroid 4" parent="Background" instance=ExtResource("3_4585n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.592, -78.423, -79.2485)
+
+[node name="asteroid 5" parent="Background" instance=ExtResource("3_4585n")]
+transform = Transform3D(0.592632, 0.805473, 0, -0.805473, 0.592632, 0, 0, 0, 1, 80.2231, -18.6641, -249.788)
+
+[node name="asteroid 6" parent="Background" instance=ExtResource("3_4585n")]
+transform = Transform3D(0.592632, 0.805473, 0, -0.805473, 0.592632, 0, 0, 0, 1, 76.3686, -91.7589, -249.788)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 472.0
+offset_right = 448.0
+offset_bottom = 512.0
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 536.0
+offset_right = 448.0
+offset_bottom = 576.0
+text = "Quit"
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 64.0
+offset_right = 1089.0
+offset_bottom = 204.0
+text = "VEIL BREAK"
+label_settings = SubResource("LabelSettings_0nnug")
+
+[connection signal="pressed" from="UI/Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/Control/Quit" to="." method="_on_quit_pressed"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvh5mf6idyam8"]
+[gd_scene load_steps=3 format=3 uid="uid://cvh5mf6idyam8"]
+
+[ext_resource type="Script" path="res://states/GameOver.gd" id="1_ybr3a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ywhmi"]
 font_size = 64
 font_color = Color(1, 0.388235, 0.431373, 1)
 
 [node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_ybr3a")
 
 [node name="GameOver" type="Control" parent="."]
 layout_mode = 3
@@ -29,3 +32,15 @@ offset_bottom = 648.0
 layout_mode = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_ywhmi")
+
+[node name="CenterContainer2" type="CenterContainer" parent="GameOver"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="GameOver/CenterContainer2"]
+layout_mode = 2
+text = "Back To Main Menu"
+
+[connection signal="pressed" from="GameOver/CenterContainer2/Button" to="." method="_on_button_pressed"]
