@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://copp5gxexhi85"]
+[gd_scene load_steps=3 format=3 uid="uid://copp5gxexhi85"]
 
 [ext_resource type="Script" path="res://weapon/Weapon.gd" id="1_vkg36"]
 
 [sub_resource type="Curve" id="Curve_mv5tv"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0451923, 1), 0.0, 0.0, 0, 0, Vector2(0.132692, 0.374233), -5.2203, -5.2203, 0, 0, Vector2(0.391346, 0.0490798), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 5
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_bpi3b"]
-top_radius = 0.1
-bottom_radius = 0.2
 
 [node name="Weapon" type="Node3D" node_paths=PackedStringArray("muzzle")]
 script = ExtResource("1_vkg36")
@@ -17,11 +13,6 @@ recoil_curve = SubResource("Curve_mv5tv")
 muzzle = NodePath("RecoilPivot/Muzzle")
 
 [node name="RecoilPivot" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RecoilPivot"]
-transform = Transform3D(1, 0.0002706, -0.000960962, 0.000961295, -0.00121265, 0.999999, 0.000269417, -0.999999, -0.00121291, 0.0012424, 0.00208259, -0.998142)
-mesh = SubResource("CylinderMesh_bpi3b")
-skeleton = NodePath("../..")
 
 [node name="Muzzle" type="Node3D" parent="RecoilPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
