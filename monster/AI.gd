@@ -59,12 +59,38 @@ class PulseWave:
 	
 	func process(delta : float):
 		return Idle.new(2.0)
-		
-		
-		
+
+
+
 class FollowPlayer:
 	func _init():
 		print("AI state: FollowPlayer");
+		pass
+	
+	func start(monster):
+		pass
+	
+	func process(delta : float):
+		return LookAtPlayer.new()
+
+
+
+class LookAtPlayer:
+	func _init():
+		print("AI state: LookAtPlayer");
+		pass
+	
+	func start(monster):
+		monster.look_at_player()
+	
+	func process(delta : float):
+		return MoveToPlayer.new()
+
+
+
+class MoveToPlayer:
+	func _init():
+		print("AI state: MoveToPlayer");
 		pass
 	
 	func start(monster):

@@ -11,7 +11,6 @@ extends Node3D
 @export var move_speed : float = 10.0
 @export var move_margin : float = 100.0
 
-
 @onready var rng = RandomNumberGenerator.new();
 @onready var level = get_parent();
 @onready var dest_position := self.position;
@@ -51,11 +50,16 @@ func get_max_health() -> int:
 	
 	
 	
-	
 func move_to_player():
 	if(player):
-		self.look_at(player.position)
 		self.dest_position = player.position;
+
+
+
+func look_at_player():
+	if(player):
+		$model.fade_out();
+		$fade_timer.start();
 
 
 
@@ -75,9 +79,14 @@ func spawn_turrets():
 
 
 
-
 func pulse_wave():
 	var w : Node = wave.instantiate();
 	w.position = position;
 	w.team = self.team;
 	level.add_child(w);
+
+
+
+func _on_fade_timer_timeout():
+	self.look_at(player.position);
+	$model.fade_in();
