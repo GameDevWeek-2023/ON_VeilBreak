@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dvfjmy3qnb0v3"]
+[gd_scene load_steps=16 format=3 uid="uid://dvfjmy3qnb0v3"]
 
 [ext_resource type="PackedScene" uid="uid://copp5gxexhi85" path="res://weapon/Weapon.tscn" id="1_d0ojn"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_lsee7"]
@@ -15,14 +15,6 @@
 
 [sub_resource type="Curve" id="Curve_squkw"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_dsd6u"]
-_data = [Vector2(0, 0), 0.0, 2.58606, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_r21ks"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_a324d"]
@@ -46,8 +38,6 @@ shape = SubResource("CapsuleShape3D_2ioct")
 
 [node name="Movement" parent="." instance=ExtResource("2_v5qm3")]
 movement_curve = SubResource("Curve_squkw")
-boost_enter_curve = SubResource("Curve_dsd6u")
-boost_exit_curve = SubResource("Curve_r21ks")
 
 [node name="player_camara" parent="." instance=ExtResource("2_et1dp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

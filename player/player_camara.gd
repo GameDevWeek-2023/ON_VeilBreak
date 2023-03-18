@@ -30,4 +30,4 @@ func _physics_process(delta : float):
 		t = usedCurve.sample((duration-time_remaining)/duration);
 		time_remaining -= delta;
 		self.spring_length = from * (1 - t) +  to * t;
-		print("duration : ", duration, " | time_remaining : ", time_remaining, " | t : ", t , " | from : ", from , " | to : ", to)
+#		print("duration : ", duration, " | time_remaining : ", time_remaining, " | t : ", t , " | from : ", from , " | to : ", to)

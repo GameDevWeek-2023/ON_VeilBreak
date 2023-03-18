@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://rtm3dqafifby"]
+[gd_scene load_steps=4 format=3 uid="uid://rtm3dqafifby"]
 
 [ext_resource type="Script" path="res://player/movement.gd" id="1_3hurg"]
 
+[sub_resource type="Curve" id="Curve_vhmt7"]
+_data = [Vector2(0, 0), 0.0, 2.62019, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_cjk68"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.16442, 0.0, 0, 0]
+point_count = 2
+
 [node name="Movement" type="Node3D"]
 script = ExtResource("1_3hurg")
+to_add_boost_speed = 200
+boost_enter_curve = SubResource("Curve_vhmt7")
+boost_exit_curve = SubResource("Curve_cjk68")
+boost_enter_timing = 0.5
+boost_cd = 1.0

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://blh0vgq0vf1ht"]
+[gd_scene load_steps=3 format=3 uid="uid://mp22x5e8ebnu"]
 
-[ext_resource type="PackedScene" uid="uid://cu7vy5ntun43q" path="res://ui/BoostMeter.tscn" id="1_1pydp"]
+[ext_resource type="PackedScene" uid="uid://d1uulgmam716" path="res://ui/BoostMeter.tscn" id="1_1pydp"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_txwpt"]
 viewport_path = NodePath("SubViewport")
@@ -14,3 +14,5 @@ texture = SubResource("ViewportTexture_txwpt")
 transparent_bg = true
 
 [node name="Ring" parent="SubViewport" instance=ExtResource("1_1pydp")]
+start_angle = -15.0
+end_angle = 15.0
