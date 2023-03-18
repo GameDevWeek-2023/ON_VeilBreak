@@ -21,12 +21,11 @@ extends Node3D
 
 func gravity_drop_off(other_position : Vector3) -> float:
 	var r = (self.position - other_position).length(); 
-	return (10) * (r * r)
+	return r / 1000;
 	
 
-
-func is_gravity_inversed() -> bool:
-	return true;
+func get_gravity() -> float:
+	return 9.81;
 
 
 

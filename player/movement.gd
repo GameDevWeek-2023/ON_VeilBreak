@@ -170,7 +170,7 @@ func _apply_gravity():
 				var vec = (obj.position - parent.position);
 				var dir = vec.normalized();
 				var force = obj.get_gravity() * obj.gravity_drop_off(parent.position) * 100;
-				current_speed = max(force + current_speed, current_speed);
+#				current_speed = max(force + current_speed, current_speed);
 				if(force >= 10):
 					print(force)
 				parent.velocity += dir * force;
