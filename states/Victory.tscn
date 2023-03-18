@@ -43,4 +43,14 @@ offset_bottom = 648.0
 layout_mode = 2
 text = "Back To Main Menu"
 
+[node name="CenterContainer3" type="CenterContainer" parent="GameOver"]
+offset_top = 392.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="replay" type="Button" parent="GameOver/CenterContainer3"]
+layout_mode = 2
+text = "Play again"
+
 [connection signal="pressed" from="GameOver/CenterContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GameOver/CenterContainer3/replay" to="." method="_on_replay_pressed"]
