@@ -46,8 +46,8 @@ radius = 0.1
 height = 0.2
 
 [node name="Projectile" instance=ExtResource("1_ld5yn")]
-speed = 200.0
-lifetime = 4.0
+speed = 400.0
+lifetime = 2.0
 
 [node name="Hitbox" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -17,6 +17,7 @@ class Idle:
 		
 		var options := [
 			(func(): return SpawnTurrets.new()),
+			(func(): return FollowPlayer.new()),
 			(func(): return PulseWave.new())
 		];
 		
@@ -55,6 +56,19 @@ class PulseWave:
 	
 	func start(monster):
 		monster.pulse_wave()
+	
+	func process(delta : float):
+		return Idle.new(2.0)
+		
+		
+		
+class FollowPlayer:
+	func _init():
+		print("AI state: FollowPlayer");
+		pass
+	
+	func start(monster):
+		monster.move_to_player()
 	
 	func process(delta : float):
 		return Idle.new(2.0)
